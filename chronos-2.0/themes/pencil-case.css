@@ -1,0 +1,185 @@
+/* Theme: a cheerful primary-school organiser and a box of coloured pencils */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "pencil-case";
+  --chronos-theme-name: "Пенал";
+  --chronos-theme-icon-path: "M4,6H20A2,2 0 0,1 22,8V16A2,2 0 0,1 20,18H4A2,2 0 0,1 2,16V8A2,2 0 0,1 4,6M4,8V16H20V8H4M7,10H15V12H7V10M17,8H19V10H17V8Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --school-display-family: "Comic Sans MS", "Segoe Print", ui-rounded, cursive;
+  --radius-none: 0;
+  --radius-sm: 10px;
+  --radius-compact: 12px;
+  --radius-md: 14px;
+  --radius-card: 16px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-panel: 24px;
+  --radius-modal: 26px;
+  --radius-pill: 999px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --school-blue: oklch(66% 0.16 242);
+  --school-pink: oklch(75% 0.15 350);
+  --school-mint: oklch(76% 0.12 164);
+  --school-violet: oklch(68% 0.13 295);
+  --body-bg:
+    radial-gradient(circle, oklch(75% 0.13 350 / 0.2) 0 2px, transparent 2.5px)
+      0 0 / 34px 34px,
+    radial-gradient(circle, oklch(67% 0.13 242 / 0.18) 0 2px, transparent 2.5px)
+      17px 17px / 34px 34px,
+    oklch(97.5% 0.025 91);
+  --accent: oklch(58% 0.18 244);
+  --accent-strong: oklch(43% 0.17 244);
+  --accent-soft: oklch(92% 0.06 244);
+  --accent-focus: oklch(58% 0.18 244 / 0.76);
+  --accent-border: oklch(58% 0.18 244 / 0.34);
+  --accent-ring: oklch(58% 0.18 244 / 0.16);
+  --accent-wash: oklch(58% 0.18 244 / 0.09);
+  --success: oklch(53% 0.14 155);
+  --success-ring: oklch(53% 0.14 155 / 0.2);
+  --amber: oklch(67% 0.16 82);
+  --red: oklch(57% 0.2 29);
+  --urgent: var(--red);
+  --border: oklch(42% 0.08 250 / 0.13);
+  --circle-border: oklch(42% 0.08 250 / 0.22);
+  --text: oklch(28% 0.055 252);
+  --muted: oklch(44% 0.055 252);
+  --faint: oklch(52% 0.04 252);
+  --panel: oklch(99% 0.012 91 / 0.93);
+  --panel-solid: oklch(99% 0.012 91);
+  --panel-2: oklch(94% 0.035 242);
+  --card: oklch(99.4% 0.01 91);
+  --hover: oklch(93% 0.05 244);
+  --strong-text: oklch(99% 0.01 91);
+  --primary-bg: oklch(51% 0.18 244);
+  --primary-text: oklch(99% 0.01 91);
+  --primary-hover: oklch(45% 0.18 244);
+  --header-bg: oklch(98.5% 0.018 91 / 0.96);
+  --neutral-chip-bg: oklch(90% 0.03 245);
+  --neutral-chip-text: oklch(42% 0.07 245);
+  --today-bg: oklch(92% 0.065 244);
+  --today-border: oklch(58% 0.18 244 / 0.4);
+  --task-hover-border: oklch(58% 0.18 244 / 0.38);
+  --task-hover-shadow: 0 4px 0 oklch(46% 0.11 244 / 0.17);
+  --search-match-bg: oklch(93% 0.055 294);
+  --check-border: oklch(52% 0.055 252);
+  --danger-soft: oklch(95% 0.05 29);
+  --overlay: oklch(23% 0.06 252 / 0.46);
+  --menu-bg: oklch(99% 0.012 91);
+  --popover-bg: oklch(99% 0.012 91);
+  --menu-shadow: 0 7px 0 oklch(46% 0.11 244 / 0.16);
+  --modal-shadow: 0 10px 0 oklch(46% 0.11 244 / 0.18);
+  --scroll-thumb: oklch(78% 0.055 244);
+  --scroll-thumb-hover: oklch(62% 0.1 244);
+  --date-out: oklch(50% 0.04 252);
+  --shadow-sm: 0 2px 0 oklch(46% 0.11 244 / 0.12);
+}
+
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --school-blue: oklch(72% 0.15 242);
+  --school-pink: oklch(76% 0.15 350);
+  --school-mint: oklch(76% 0.12 164);
+  --school-violet: oklch(74% 0.13 295);
+  --body-bg:
+    radial-gradient(circle, oklch(76% 0.15 350 / 0.13) 0 2px, transparent 2.5px)
+      0 0 / 34px 34px,
+    radial-gradient(circle, oklch(72% 0.15 242 / 0.13) 0 2px, transparent 2.5px)
+      17px 17px / 34px 34px,
+    oklch(19% 0.045 252);
+  --accent: oklch(73% 0.15 242);
+  --accent-strong: oklch(82% 0.11 242);
+  --accent-soft: oklch(73% 0.15 242 / 0.17);
+  --accent-focus: oklch(73% 0.15 242 / 0.8);
+  --accent-border: oklch(73% 0.15 242 / 0.38);
+  --accent-ring: oklch(73% 0.15 242 / 0.2);
+  --accent-wash: oklch(73% 0.15 242 / 0.1);
+  --success: oklch(75% 0.13 155);
+  --success-ring: oklch(75% 0.13 155 / 0.22);
+  --amber: oklch(82% 0.15 82);
+  --red: oklch(71% 0.19 29);
+  --urgent: var(--red);
+  --border: oklch(89% 0.025 250 / 0.13);
+  --circle-border: oklch(89% 0.025 250 / 0.22);
+  --text: oklch(94% 0.02 91);
+  --muted: oklch(76% 0.025 244);
+  --faint: oklch(68% 0.025 244);
+  --panel: oklch(23% 0.045 252 / 0.94);
+  --panel-solid: oklch(23% 0.045 252);
+  --panel-2: oklch(28% 0.055 250);
+  --card: oklch(27% 0.045 252);
+  --hover: oklch(73% 0.15 242 / 0.13);
+  --strong-text: oklch(18% 0.045 252);
+  --primary-bg: oklch(73% 0.15 242);
+  --primary-text: oklch(18% 0.045 252);
+  --primary-hover: oklch(80% 0.13 242);
+  --header-bg: oklch(18% 0.045 252 / 0.96);
+  --neutral-chip-bg: oklch(34% 0.045 250);
+  --neutral-chip-text: oklch(78% 0.025 244);
+  --today-bg: oklch(73% 0.15 242 / 0.15);
+  --today-border: oklch(73% 0.15 242 / 0.4);
+  --task-hover-border: oklch(73% 0.15 242 / 0.42);
+  --task-hover-shadow: 0 4px 0 oklch(9% 0.03 252 / 0.45);
+  --search-match-bg: oklch(74% 0.13 295 / 0.15);
+  --check-border: oklch(76% 0.025 244);
+  --danger-soft: oklch(71% 0.19 29 / 0.13);
+  --overlay: oklch(9% 0.03 252 / 0.68);
+  --menu-bg: oklch(23% 0.045 252);
+  --popover-bg: oklch(23% 0.045 252);
+  --menu-shadow: 0 7px 0 oklch(9% 0.03 252 / 0.48);
+  --modal-shadow: 0 10px 0 oklch(9% 0.03 252 / 0.54);
+  --scroll-thumb: oklch(39% 0.045 250);
+  --scroll-thumb-hover: oklch(54% 0.075 244);
+  --date-out: oklch(69% 0.025 244);
+  --shadow-sm: 0 2px 0 oklch(9% 0.03 252 / 0.36);
+}
+
+.app-header {
+  box-shadow: inset 0 -3px 0 color-mix(in oklch, var(--school-blue) 42%, transparent);
+}
+.brand span,
+.col-title,
+.expanded-service-title {
+  font-family: var(--school-display-family);
+}
+.brand span {
+  color: var(--accent-strong);
+  letter-spacing: 0.01em;
+}
+.column-surface:not(.collapsed) > .col-header {
+  box-shadow: inset 0 4px 0 var(--school-blue);
+}
+.column-surface:nth-child(4n + 2):not(.collapsed) > .col-header {
+  box-shadow: inset 0 4px 0 var(--school-pink);
+}
+.column-surface:nth-child(4n + 3):not(.collapsed) > .col-header {
+  box-shadow: inset 0 4px 0 var(--school-mint);
+}
+.column-surface:nth-child(4n):not(.collapsed) > .col-header {
+  box-shadow: inset 0 4px 0 var(--school-violet);
+}
+.task {
+  box-shadow: 0 2px 0 color-mix(in oklch, var(--school-blue) 20%, transparent);
+}
+.task:hover {
+  box-shadow: var(--task-hover-shadow);
+}
+.icon-btn.active-toggle{
+  box-shadow: 0 2px 0 color-mix(in oklch, var(--school-violet) 34%, transparent);
+}
+.modal,
+.context-menu,
+.submenu,
+.task-marker-filter-popover,
+.visual-theme-popover,
+.file-popover,
+.column-actions-popover {
+  border-width: 2px;
+}

@@ -1,0 +1,229 @@
+/* Theme: neo-brutalism — raw ink, hard offsets, zero curves */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "neo-brutal";
+  --chronos-theme-name: "Необрутализм";
+  --chronos-theme-icon-path: "M3,3H16V8H21V21H8V16H3V3M6,6V13H13V6H6M11,11V18H18V11H11Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Arial Black", "Franklin Gothic Heavy", Arial, sans-serif;
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-compact: 0;
+  --radius-md: 0;
+  --radius-card: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-panel: 0;
+  --radius-modal: 0;
+  --radius-pill: 0;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg: oklch(99% 0 0);
+  --accent: oklch(83% 0.19 97);
+  --accent-strong: oklch(58% 0.16 85);
+  --accent-soft: oklch(93% 0.09 97);
+  --accent-focus: oklch(83% 0.19 97 / 0.8);
+  --accent-border: oklch(20% 0.03 90 / 0.9);
+  --accent-ring: oklch(83% 0.19 97 / 0.3);
+  --accent-wash: oklch(83% 0.19 97 / 0.14);
+  --success: oklch(50% 0.14 150);
+  --success-ring: oklch(50% 0.14 150 / 0.2);
+  --amber: oklch(65% 0.15 70);
+  --red: oklch(52% 0.22 25);
+  --urgent: oklch(55% 0.22 28);
+  --border: oklch(12% 0 0 / 0.95);
+  --circle-border: oklch(12% 0 0 / 0.85);
+  --text: oklch(10% 0 0);
+  --muted: oklch(38% 0 0);
+  --faint: oklch(48% 0 0);
+  --panel: oklch(100% 0 0);
+  --panel-solid: oklch(100% 0 0);
+  --panel-2: oklch(93% 0.02 97);
+  --card: oklch(100% 0 0);
+  --hover: oklch(93% 0.12 97);
+  --strong-text: oklch(100% 0 0);
+  --primary-bg: oklch(8% 0 0);
+  --primary-text: oklch(83% 0.19 97);
+  --primary-hover: oklch(20% 0.02 90);
+  --header-bg: oklch(8% 0 0);
+  --neutral-chip-bg: oklch(88% 0.008 90);
+  --neutral-chip-text: oklch(15% 0 0);
+  --today-bg: oklch(88% 0.16 97);
+  --today-border: var(--text);
+  --task-hover-border: var(--text);
+  --task-hover-shadow: 8px 8px 0 var(--text);
+  --search-match-bg: oklch(90% 0.14 97);
+  --check-border: oklch(10% 0 0);
+  --danger-soft: oklch(92% 0.06 27);
+  --overlay: oklch(8% 0 0 / 0.6);
+  --menu-bg: oklch(100% 0 0);
+  --popover-bg: oklch(100% 0 0);
+  --menu-shadow: 6px 6px 0 var(--text);
+  --modal-shadow: 10px 10px 0 var(--text);
+  --scroll-thumb: oklch(70% 0.02 90);
+  --scroll-thumb-hover: oklch(50% 0.02 90);
+  --date-out: oklch(55% 0 0);
+  --shadow-sm: 3px 3px 0 var(--text);
+}
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg: oklch(8% 0 0);
+  --accent: oklch(88% 0.19 97);
+  --accent-strong: oklch(80% 0.17 92);
+  --accent-soft: oklch(88% 0.19 97 / 0.18);
+  --accent-focus: oklch(88% 0.19 97 / 0.85);
+  --accent-border: oklch(88% 0.19 97 / 0.5);
+  --accent-ring: oklch(88% 0.19 97 / 0.28);
+  --accent-wash: oklch(88% 0.19 97 / 0.12);
+  --success: oklch(75% 0.16 150);
+  --success-ring: oklch(75% 0.16 150 / 0.2);
+  --amber: oklch(80% 0.14 75);
+  --red: oklch(68% 0.2 27);
+  --urgent: oklch(70% 0.2 30);
+  --border: oklch(95% 0 0 / 0.9);
+  --circle-border: oklch(95% 0 0 / 0.8);
+  --text: oklch(96% 0 0);
+  --muted: oklch(70% 0 0);
+  --faint: oklch(58% 0 0);
+  --panel: oklch(12% 0 0);
+  --panel-solid: oklch(12% 0 0);
+  --panel-2: oklch(18% 0.02 90);
+  --card: oklch(14% 0 0);
+  --hover: oklch(88% 0.19 97 / 0.14);
+  --strong-text: oklch(8% 0 0);
+  --primary-bg: oklch(88% 0.19 97);
+  --primary-text: oklch(8% 0 0);
+  --primary-hover: oklch(93% 0.17 97);
+  --header-bg: oklch(4% 0 0);
+  --neutral-chip-bg: oklch(22% 0.01 90);
+  --neutral-chip-text: oklch(85% 0 0);
+  --today-bg: oklch(88% 0.19 97 / 0.16);
+  --today-border: var(--accent);
+  --task-hover-border: var(--accent);
+  --task-hover-shadow: 8px 8px 0 var(--text);
+  --search-match-bg: oklch(30% 0.08 97);
+  --check-border: oklch(90% 0 0);
+  --danger-soft: oklch(68% 0.2 27 / 0.13);
+  --overlay: oklch(2% 0 0 / 0.75);
+  --menu-bg: oklch(12% 0 0);
+  --popover-bg: oklch(12% 0 0);
+  --menu-shadow: 6px 6px 0 var(--text);
+  --modal-shadow: 10px 10px 0 var(--text);
+  --scroll-thumb: oklch(35% 0.01 90);
+  --scroll-thumb-hover: oklch(55% 0.02 90);
+  --date-out: oklch(50% 0 0);
+  --shadow-sm: 3px 3px 0 var(--text);
+}
+
+/* Poster type: tight, heavy, no rounding anywhere */
+.brand {
+  color: var(--accent);
+}
+.brand span,
+.btn,
+.week-label,
+.modal-title,
+.bin-tab,
+.expanded-service-title,
+.drag-dock-target,
+.col-title,
+.day-name,
+.day-month,
+.stepper-label {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+.brand span {
+  font-size: 1.1rem;
+}
+.day-num {
+  font-weight: 900;
+}
+.task-text {
+  font-weight: 650;
+  letter-spacing: -0.005em;
+}
+::selection {
+  background: var(--text);
+  color: var(--accent);
+}
+
+/* Every surface stamped with a thick black rule, square corners */
+.task,
+.week-nav,
+.day-stepper,
+.filter-control,
+.file-control,
+.btn,
+.new-task-input,
+.board-search-input,
+.modal,
+.help-panel,
+.context-menu,
+.submenu,
+.file-popover,
+.clear-popover,
+.task-marker-filter-popover,
+.editor-filter-popover,
+.visual-theme-popover,
+.column-actions-popover,
+.date-popover,
+.bin-tab,
+.copy-feedback-bubble {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--text);
+}
+.column-surface:not(.collapsed) > .col-header {
+  border: 2px solid var(--header-bg);
+  background: var(--header-bg);
+  color: var(--accent);
+}
+.column-surface.today:not(.collapsed) > .col-header {
+  background: var(--accent);
+  color: var(--header-bg);
+  border-color: var(--header-bg);
+}
+.column-surface:not(.collapsed) > .col-header .col-title,
+.column-surface:not(.collapsed) > .col-header .day-name,
+.column-surface:not(.collapsed) > .col-header .day-num,
+.column-surface:not(.collapsed) > .col-header .day-month {
+  color: inherit;
+}
+.task {
+  box-shadow: 5px 5px 0 var(--text);
+}
+.task:hover {
+  transform: translate(-3px, -3px);
+}
+.task-list {
+  --task-list-air: 14px;
+  padding-inline: 6px;
+  gap: 14px;
+}
+.check {
+  border-width: 3px;
+  border-radius: 0;
+}
+.icon-btn {
+  border-width: 2px;
+  border-radius: 0;
+}
+.task .icon-btn,
+.task .check-hit {
+  border-width: 1px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+.task .icon-btn:hover {
+  border-color: var(--text);
+  background: var(--hover);
+}

@@ -1,0 +1,198 @@
+/* Theme study: ink and paper */
+      :root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+        color-scheme: light;
+  --chronos-theme-id: "ink-paper";
+      --chronos-theme-name: "Чернила и бумага";
+      --chronos-theme-icon-path: "M8,2H16V4H15V6H17A2,2 0 0,1 19,8V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V8A2,2 0 0,1 7,6H9V4H8V2M7,10V20H17V10H7M9,12H15V14H9V12Z";
+      --ui-font-family: Aptos, "Segoe UI", system-ui, sans-serif;
+      --hand-family: "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", ui-rounded, cursive;
+      --task-text-size: 0.8rem;
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-compact: 11px;
+  --radius-md: 12px;
+  --radius-card: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --radius-panel: 22px;
+  --radius-modal: 24px;
+  --radius-pill: 999px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+        --body-bg:
+          repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 27px,
+            oklch(30% 0.025 255 / 0.025) 27px,
+            oklch(30% 0.025 255 / 0.025) 28px
+          ),
+          oklch(96.5% 0.018 82);
+        --accent: oklch(47% 0.15 257);
+        --accent-strong: oklch(37% 0.135 257);
+        --accent-soft: oklch(91.5% 0.045 257);
+        --accent-focus: oklch(47% 0.15 257 / 0.72);
+        --accent-border: oklch(47% 0.15 257 / 0.3);
+  --today-border: var(--accent-border);
+        --accent-ring: oklch(47% 0.15 257 / 0.13);
+        --accent-wash: oklch(47% 0.15 257 / 0.07);
+        --success: oklch(44% 0.1 150);
+        --success-ring: oklch(44% 0.1 150 / 0.18);
+        --amber: oklch(54% 0.12 74);
+        --urgent: oklch(52% 0.16 31);
+        --red: oklch(47% 0.17 24);
+        --border: oklch(27% 0.022 255 / 0.13);
+        --circle-border: oklch(27% 0.022 255 / 0.22);
+        --text: oklch(22% 0.025 255);
+        --muted: oklch(46% 0.022 255);
+        --faint: oklch(51% 0.018 255);
+        --panel: oklch(98.2% 0.012 82 / 0.93);
+        --panel-solid: oklch(98.2% 0.012 82);
+        --panel-2: oklch(92.5% 0.02 82);
+        --card: oklch(98.8% 0.01 82);
+        --hover: oklch(91.5% 0.03 257);
+        --strong-text: oklch(98% 0.01 82);
+        --primary-bg: oklch(34% 0.12 257);
+        --primary-text: oklch(97.5% 0.012 82);
+        --primary-hover: oklch(29% 0.115 257);
+        --header-bg: oklch(96.5% 0.018 82 / 0.96);
+        --neutral-chip-bg: oklch(88% 0.018 255);
+        --neutral-chip-text: oklch(40% 0.022 255);
+        --today-bg: oklch(94% 0.03 257);
+        --task-hover-border: oklch(27% 0.022 255 / 0.28);
+        --task-hover-shadow: 2px 3px 0 oklch(27% 0.022 255 / 0.09);
+        --search-match-bg: oklch(93% 0.036 257);
+        --check-border: oklch(66% 0.025 255);
+        --danger-soft: oklch(94% 0.028 24);
+        --overlay: oklch(18% 0.03 255 / 0.48);
+        --menu-bg: oklch(98.2% 0.012 82);
+        --popover-bg: oklch(98.2% 0.012 82);
+        --menu-shadow: 3px 5px 0 oklch(27% 0.022 255 / 0.13);
+        --modal-shadow: 5px 8px 0 oklch(27% 0.022 255 / 0.16);
+        --scroll-thumb: oklch(76% 0.02 82);
+        --scroll-thumb-hover: oklch(61% 0.025 255);
+        --date-out: oklch(50% 0.018 255);
+        --shadow-sm: 1px 1px 0 oklch(27% 0.022 255 / 0.08);
+      }
+      :root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+        color-scheme: dark;
+        --body-bg:
+          repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 27px,
+            oklch(88% 0.025 82 / 0.025) 27px,
+            oklch(88% 0.025 82 / 0.025) 28px
+          ),
+          oklch(18% 0.024 255);
+        --accent: oklch(72% 0.12 252);
+        --accent-strong: oklch(80% 0.1 252);
+        --accent-soft: oklch(72% 0.12 252 / 0.14);
+        --accent-focus: oklch(72% 0.12 252 / 0.78);
+        --accent-border: oklch(72% 0.12 252 / 0.32);
+        --accent-ring: oklch(72% 0.12 252 / 0.17);
+        --accent-wash: oklch(72% 0.12 252 / 0.08);
+        --success: oklch(72% 0.1 150);
+        --success-ring: oklch(72% 0.1 150 / 0.2);
+        --amber: oklch(76% 0.11 74);
+        --urgent: oklch(70% 0.15 31);
+        --red: oklch(65% 0.17 24);
+        --border: oklch(90% 0.018 82 / 0.12);
+        --circle-border: oklch(90% 0.018 82 / 0.21);
+        --text: oklch(91% 0.018 82);
+        --muted: oklch(69% 0.018 82);
+        --faint: oklch(63% 0.018 82);
+        --panel: oklch(22% 0.024 255 / 0.94);
+        --panel-solid: oklch(22% 0.024 255);
+        --panel-2: oklch(25% 0.024 255);
+        --card: oklch(24.5% 0.024 255);
+        --hover: oklch(72% 0.12 252 / 0.1);
+        --strong-text: oklch(18% 0.024 255);
+        --primary-bg: oklch(72% 0.12 252);
+        --primary-text: oklch(16% 0.024 255);
+        --primary-hover: oklch(78% 0.1 252);
+        --header-bg: oklch(17% 0.024 255 / 0.96);
+        --neutral-chip-bg: oklch(30% 0.022 255);
+        --neutral-chip-text: oklch(72% 0.018 82);
+        --today-bg: oklch(72% 0.12 252 / 0.1);
+        --task-hover-border: oklch(90% 0.018 82 / 0.22);
+        --task-hover-shadow: 2px 3px 0 oklch(8% 0.02 255 / 0.36);
+        --search-match-bg: oklch(29% 0.04 252);
+        --check-border: oklch(43% 0.025 255);
+        --danger-soft: oklch(65% 0.17 24 / 0.1);
+        --overlay: oklch(7% 0.02 255 / 0.68);
+        --menu-bg: oklch(22% 0.024 255);
+        --popover-bg: oklch(22% 0.024 255);
+        --menu-shadow: 3px 5px 0 oklch(7% 0.02 255 / 0.4);
+        --modal-shadow: 5px 8px 0 oklch(7% 0.02 255 / 0.48);
+        --scroll-thumb: oklch(34% 0.022 255);
+        --scroll-thumb-hover: oklch(48% 0.024 255);
+        --date-out: oklch(61% 0.018 82);
+        --shadow-sm: 1px 1px 0 oklch(7% 0.02 255 / 0.28);
+      }
+      .task { --task-leading: 1.55; }
+.task-text {
+        font-family: var(--hand-family);
+        font-weight: 500;
+        letter-spacing: 0.005em;
+      }
+      .brand span,
+      .week-label,
+      .day-name,
+      .day-num,
+      .day-month {
+        font-family: var(--hand-family);
+        font-style: normal;
+      }
+      .brand span {
+        font-size: 1.06rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .week-label {
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+      .day-num {
+        font-weight: 700;
+      }
+      .help-layer {
+        font-family: Aptos, "Segoe UI", system-ui, sans-serif;
+        font-style: normal;
+      }
+      .week-nav,
+      .day-stepper,
+      .btn,
+      .stepper-label {
+        border-radius: 10px;
+      }
+      .column-surface:not(.collapsed) > .col-header,
+      .task-marker-filter-popover,
+      .editor-filter-popover,
+      .file-popover,
+      .clear-popover,
+      .column-actions-popover,
+      .context-menu,
+      .date-popover,
+      .new-task-input {
+        border-radius: 10px;
+      }
+      .task {
+        box-shadow: 1px 2px 0 oklch(27% 0.022 255 / 0.055);
+      }
+      :root[data-theme="dark"] .task {
+        box-shadow: 1px 2px 0 oklch(7% 0.02 255 / 0.3);
+      }
+      .task:hover {
+        transform: translate(-1px, -1px);
+      }
+      .modal {
+        border-radius: 16px;
+      }

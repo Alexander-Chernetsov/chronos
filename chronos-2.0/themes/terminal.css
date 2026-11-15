@@ -1,0 +1,205 @@
+/* Theme: phosphor terminal */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "terminal";
+  --chronos-theme-name: "Терминал";
+  --chronos-theme-icon-path: "M21,2H3A2,2 0 0,0 1,4V20A2,2 0 0,0 3,22H21A2,2 0 0,0 23,20V4A2,2 0 0,0 21,2M21,20H3V6H21V20M19,7H5V9H19V7M11,17H19V15H11V17M7.5,10L4,13.5L7.5,17L9,15.5L7,13.5L9,11.5L7.5,10Z";
+  --ui-font-family: ui-monospace, "Cascadia Mono", "JetBrains Mono",
+    "Segoe UI Mono", Consolas, monospace;
+  --task-text-size: 0.79rem;
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-compact: 0;
+  --radius-md: 0;
+  --radius-card: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-panel: 0;
+  --radius-modal: 0;
+  --radius-pill: 0;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 3px,
+      oklch(30% 0.03 155 / 0.03) 3px,
+      oklch(30% 0.03 155 / 0.03) 4px
+    ),
+    oklch(95.5% 0.012 110);
+  --accent: oklch(46% 0.13 152);
+  --accent-strong: oklch(35% 0.115 152);
+  --accent-soft: oklch(90% 0.05 152);
+  --accent-focus: oklch(46% 0.13 152 / 0.75);
+  --accent-border: oklch(46% 0.13 152 / 0.4);
+  --accent-ring: oklch(46% 0.13 152 / 0.18);
+  --accent-wash: oklch(46% 0.13 152 / 0.09);
+  --success: oklch(47% 0.12 150);
+  --success-ring: oklch(47% 0.12 150 / 0.18);
+  --amber: oklch(57% 0.13 78);
+  --red: oklch(50% 0.19 27);
+  --urgent: oklch(52% 0.19 32);
+  --border: oklch(28% 0.03 155 / 0.26);
+  --circle-border: oklch(28% 0.03 155 / 0.34);
+  --text: oklch(26% 0.035 155);
+  --muted: oklch(45% 0.035 155);
+  --faint: oklch(52% 0.03 155);
+  --panel: oklch(97.5% 0.01 110 / 0.96);
+  --panel-solid: oklch(97.5% 0.01 110);
+  --panel-2: oklch(92.5% 0.016 110);
+  --card: oklch(98.6% 0.008 110);
+  --hover: oklch(91% 0.04 152);
+  --strong-text: oklch(97.5% 0.01 110);
+  --primary-bg: oklch(30% 0.09 152);
+  --primary-text: oklch(97.5% 0.01 110);
+  --primary-hover: oklch(24% 0.08 152);
+  --header-bg: oklch(92.5% 0.016 110);
+  --neutral-chip-bg: oklch(88% 0.015 110);
+  --neutral-chip-text: oklch(40% 0.03 155);
+  --today-bg: oklch(90.5% 0.055 152);
+  --today-border: var(--accent);
+  --task-hover-border: var(--accent);
+  --task-hover-shadow: inset 0 0 0 1px var(--accent);
+  --search-match-bg: oklch(91% 0.06 152);
+  --check-border: oklch(55% 0.05 155);
+  --danger-soft: oklch(93% 0.04 27);
+  --overlay: oklch(22% 0.03 155 / 0.55);
+  --menu-bg: oklch(97.5% 0.01 110);
+  --popover-bg: oklch(97.5% 0.01 110);
+  --menu-shadow: 4px 4px 0 oklch(28% 0.03 155 / 0.14);
+  --modal-shadow: 6px 6px 0 oklch(28% 0.03 155 / 0.16);
+  --scroll-thumb: oklch(72% 0.04 155);
+  --scroll-thumb-hover: oklch(55% 0.06 152);
+  --date-out: oklch(58% 0.02 110);
+  --shadow-sm: none;
+}
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 3px,
+      oklch(85% 0.15 145 / 0.04) 3px,
+      oklch(85% 0.15 145 / 0.04) 4px
+    ),
+    oklch(15% 0.02 155);
+  --accent: oklch(80% 0.19 145);
+  --accent-strong: oklch(88% 0.18 145);
+  --accent-soft: oklch(80% 0.19 145 / 0.16);
+  --accent-focus: oklch(80% 0.19 145 / 0.8);
+  --accent-border: oklch(80% 0.19 145 / 0.36);
+  --accent-ring: oklch(80% 0.19 145 / 0.2);
+  --accent-wash: oklch(80% 0.19 145 / 0.09);
+  --success: oklch(78% 0.17 150);
+  --success-ring: oklch(78% 0.17 150 / 0.2);
+  --amber: oklch(84% 0.16 88);
+  --red: oklch(66% 0.2 27);
+  --urgent: oklch(70% 0.19 32);
+  --border: oklch(80% 0.19 145 / 0.22);
+  --circle-border: oklch(80% 0.19 145 / 0.3);
+  --text: oklch(88% 0.11 145);
+  --muted: oklch(68% 0.09 145);
+  --faint: oklch(60% 0.07 145);
+  --panel: oklch(18% 0.025 155 / 0.96);
+  --panel-solid: oklch(18% 0.025 155);
+  --panel-2: oklch(21% 0.03 155);
+  --card: oklch(19.5% 0.028 155);
+  --hover: oklch(80% 0.19 145 / 0.14);
+  --strong-text: oklch(13% 0.02 155);
+  --primary-bg: oklch(80% 0.19 145);
+  --primary-text: oklch(13% 0.02 155);
+  --primary-hover: oklch(87% 0.18 145);
+  --header-bg: oklch(13% 0.02 155);
+  --neutral-chip-bg: oklch(25% 0.03 155);
+  --neutral-chip-text: oklch(72% 0.08 145);
+  --today-bg: oklch(80% 0.19 145 / 0.12);
+  --today-border: var(--accent);
+  --task-hover-border: var(--accent);
+  --task-hover-shadow:
+    inset 0 0 0 1px var(--accent),
+    0 0 14px oklch(80% 0.19 145 / 0.22);
+  --search-match-bg: oklch(26% 0.06 150);
+  --check-border: oklch(45% 0.08 150);
+  --danger-soft: oklch(66% 0.2 27 / 0.12);
+  --overlay: oklch(8% 0.02 155 / 0.72);
+  --menu-bg: oklch(18% 0.025 155);
+  --popover-bg: oklch(18% 0.025 155);
+  --menu-shadow: 4px 4px 0 oklch(4% 0.01 155 / 0.55);
+  --modal-shadow: 6px 6px 0 oklch(4% 0.01 155 / 0.6);
+  --scroll-thumb: oklch(32% 0.05 150);
+  --scroll-thumb-hover: oklch(52% 0.1 148);
+  --date-out: oklch(55% 0.05 145);
+  --shadow-sm: none;
+}
+
+/* Typography: everything is machine output */
+.brand span,
+.week-label,
+.day-name,
+.day-month,
+.col-title,
+.stepper-label,
+.btn,
+.modal-title,
+.expanded-service-title,
+.bin-tab {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.brand span {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.task { --task-leading: 1.5; }
+.task-text {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.comment-preview {
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+::selection {
+  background: var(--accent);
+  color: var(--strong-text);
+}
+
+/* Columns become framed panes */
+.column-surface:not(.collapsed) {
+  padding: 5px;
+  border-color: var(--border);
+  background: var(--panel);
+}
+.column-surface:not(.collapsed) > .col-header {
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border);
+}
+.column-surface.today:not(.collapsed) > .col-header {
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+.task-list {
+  --task-list-air: 10px;
+}
+
+/* Cards: firm terminal edge */
+.task {
+  border-left: 3px solid var(--border);
+}
+.task:hover {
+  transform: none;
+}
+.task .icon-btn,
+.task .check-hit {
+  border-color: transparent;
+  background: transparent;
+}
+.task .icon-btn:hover {
+  border-color: var(--circle-border);
+  background: var(--hover);
+}

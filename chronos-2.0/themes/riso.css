@@ -1,0 +1,227 @@
+/* Theme: risograph print, hard ink and flat shadows */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "riso";
+  --chronos-theme-name: "Ризограф";
+  --chronos-theme-icon-path: "M18,3H6V7H18V3M19,12A1,1 0 1,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16V19M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Inter Tight", "Arial Black", Inter, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-compact: 5px;
+  --radius-md: 5px;
+  --radius-card: 6px;
+  --radius-lg: 7px;
+  --radius-xl: 8px;
+  --radius-panel: 9px;
+  --radius-modal: 10px;
+  --radius-pill: 6px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --ink: oklch(22% 0.035 285);
+  --body-bg:
+    radial-gradient(
+        oklch(22% 0.035 285 / 0.07) 1px,
+        transparent 1.4px
+      )
+      0 0 / 7px 7px,
+    oklch(95.5% 0.03 92);
+  --accent: oklch(60% 0.24 6);
+  --accent-strong: oklch(50% 0.21 8);
+  --accent-soft: oklch(92% 0.07 6);
+  --accent-focus: oklch(60% 0.24 6 / 0.75);
+  --accent-border: oklch(60% 0.24 6 / 0.45);
+  --accent-ring: oklch(60% 0.24 6 / 0.2);
+  --accent-wash: oklch(60% 0.24 6 / 0.1);
+  --success: oklch(52% 0.15 152);
+  --success-ring: oklch(52% 0.15 152 / 0.2);
+  --amber: oklch(63% 0.16 78);
+  --red: oklch(55% 0.21 28);
+  --urgent: oklch(58% 0.21 32);
+  --border: oklch(22% 0.035 285 / 0.9);
+  --circle-border: oklch(22% 0.035 285 / 0.9);
+  --text: oklch(22% 0.035 285);
+  --muted: oklch(42% 0.035 285);
+  --faint: oklch(50% 0.03 285);
+  --panel: oklch(97.5% 0.02 92);
+  --panel-solid: oklch(97.5% 0.02 92);
+  --panel-2: oklch(92% 0.035 92);
+  --card: oklch(99% 0.012 92);
+  --hover: oklch(92% 0.06 6);
+  --strong-text: oklch(98% 0.015 92);
+  --primary-bg: oklch(58% 0.24 6);
+  --primary-text: oklch(99% 0.012 92);
+  --primary-hover: oklch(52% 0.22 8);
+  --header-bg: oklch(93% 0.05 92);
+  --neutral-chip-bg: oklch(88% 0.03 92);
+  --neutral-chip-text: oklch(32% 0.035 285);
+  --today-bg: oklch(88% 0.09 6);
+  --today-border: var(--ink);
+  --task-hover-border: var(--ink);
+  --task-hover-shadow: 5px 5px 0 var(--ink);
+  --search-match-bg: oklch(93% 0.1 92);
+  --check-border: oklch(22% 0.035 285);
+  --danger-soft: oklch(93% 0.06 28);
+  --overlay: oklch(22% 0.035 285 / 0.55);
+  --menu-bg: oklch(97.5% 0.02 92);
+  --popover-bg: oklch(97.5% 0.02 92);
+  --menu-shadow: 5px 5px 0 var(--ink);
+  --modal-shadow: 8px 8px 0 var(--ink);
+  --scroll-thumb: oklch(22% 0.035 285 / 0.55);
+  --scroll-thumb-hover: oklch(22% 0.035 285 / 0.85);
+  --date-out: oklch(55% 0.03 285);
+  --shadow-sm: 2px 2px 0 var(--ink);
+}
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --ink: oklch(93% 0.02 92);
+  --body-bg:
+    radial-gradient(
+        oklch(93% 0.02 92 / 0.07) 1px,
+        transparent 1.4px
+      )
+      0 0 / 7px 7px,
+    oklch(19% 0.035 285);
+  --accent: oklch(72% 0.22 6);
+  --accent-strong: oklch(80% 0.18 6);
+  --accent-soft: oklch(72% 0.22 6 / 0.18);
+  --accent-focus: oklch(72% 0.22 6 / 0.8);
+  --accent-border: oklch(72% 0.22 6 / 0.45);
+  --accent-ring: oklch(72% 0.22 6 / 0.22);
+  --accent-wash: oklch(72% 0.22 6 / 0.1);
+  --success: oklch(75% 0.16 152);
+  --success-ring: oklch(75% 0.16 152 / 0.22);
+  --amber: oklch(84% 0.17 92);
+  --red: oklch(68% 0.2 28);
+  --urgent: oklch(71% 0.2 32);
+  --border: oklch(93% 0.02 92 / 0.85);
+  --circle-border: oklch(93% 0.02 92 / 0.85);
+  --text: oklch(93% 0.02 92);
+  --muted: oklch(74% 0.02 92);
+  --faint: oklch(66% 0.02 92);
+  --panel: oklch(23% 0.035 285);
+  --panel-solid: oklch(23% 0.035 285);
+  --panel-2: oklch(27% 0.04 285);
+  --card: oklch(25% 0.038 285);
+  --hover: oklch(72% 0.22 6 / 0.16);
+  --strong-text: oklch(17% 0.035 285);
+  --primary-bg: oklch(72% 0.22 6);
+  --primary-text: oklch(17% 0.035 285);
+  --primary-hover: oklch(80% 0.19 6);
+  --header-bg: oklch(17% 0.035 285);
+  --neutral-chip-bg: oklch(31% 0.035 285);
+  --neutral-chip-text: oklch(85% 0.02 92);
+  --today-bg: oklch(72% 0.22 6 / 0.16);
+  --today-border: var(--ink);
+  --task-hover-border: var(--ink);
+  --task-hover-shadow: 5px 5px 0 var(--ink);
+  --search-match-bg: oklch(31% 0.08 92);
+  --check-border: oklch(93% 0.02 92);
+  --danger-soft: oklch(68% 0.2 28 / 0.13);
+  --overlay: oklch(8% 0.02 285 / 0.7);
+  --menu-bg: oklch(23% 0.035 285);
+  --popover-bg: oklch(23% 0.035 285);
+  --menu-shadow: 5px 5px 0 var(--ink);
+  --modal-shadow: 8px 8px 0 var(--ink);
+  --scroll-thumb: oklch(93% 0.02 92 / 0.45);
+  --scroll-thumb-hover: oklch(93% 0.02 92 / 0.8);
+  --date-out: oklch(64% 0.02 92);
+  --shadow-sm: 2px 2px 0 var(--ink);
+}
+
+/* Loud, printed typography */
+.brand span,
+.btn,
+.week-label,
+.modal-title,
+.bin-tab,
+.expanded-service-title,
+.drag-dock-target {
+  text-transform: uppercase;
+  font-weight: 850;
+  letter-spacing: 0.015em;
+}
+.brand span {
+  font-size: 1.02rem;
+}
+.day-num {
+  font-weight: 850;
+}
+.task-text {
+  font-weight: 620;
+}
+::selection {
+  background: var(--accent);
+  color: var(--strong-text);
+}
+
+/* Everything is stamped with 2px ink and a flat offset */
+.task,
+.week-nav,
+.day-stepper,
+.filter-control,
+.file-control,
+.btn,
+.new-task-input,
+.board-search-input,
+.modal,
+.help-panel,
+.context-menu,
+.submenu,
+.file-popover,
+.clear-popover,
+.task-marker-filter-popover,
+.editor-filter-popover,
+.visual-theme-popover,
+.column-actions-popover,
+.date-popover,
+.bin-tab,
+.copy-feedback-bubble {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--ink);
+}
+.column-surface:not(.collapsed) > .col-header {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.column-surface.today:not(.collapsed) > .col-header {
+  border-color: var(--accent-strong);
+}
+.task {
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.task:hover {
+  transform: translate(-2px, -2px);
+}
+.task-list {
+  --task-list-air: 12px;
+  padding-inline: 6px;
+  gap: 12px;
+}
+.check {
+  border-width: 2px;
+  border-radius: 3px;
+}
+.icon-btn {
+  border-width: 2px;
+  border-radius: 7px;
+}
+.task .icon-btn,
+.task .check-hit {
+  border-width: 1px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+.task .icon-btn:hover {
+  border-color: var(--ink);
+  background: var(--hover);
+}

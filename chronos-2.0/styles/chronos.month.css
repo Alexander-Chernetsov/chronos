@@ -1,0 +1,117 @@
+/* Month overview */
+.board.month-view {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(170px, 1fr));
+  grid-template-rows: repeat(var(--month-week-count), minmax(0, 1fr));
+  align-items: stretch;
+  overflow: auto;
+}
+.month-day {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xl);
+  background: transparent;
+}
+.month-day.current-month {
+  border-color: var(--border);
+}
+.month-day.adjacent-month:not(.today) > .col-header {
+  opacity: 0.58;
+}
+.month-day.today {
+  border-color: var(--accent-focus);
+  box-shadow: inset 0 0 0 2px var(--accent-focus);
+}
+.month-day > .col-header {
+  min-width: 0;
+}
+.month-task-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 7px 6px 8px;
+}
+.month-task-list.is-empty:hover > .quick-task-add,
+.month-task-list.is-empty:focus-within > .quick-task-add {
+  opacity: 1;
+}
+.month-empty-add {
+  flex: 0 0 auto;
+  align-self: center;
+  margin: auto;
+}
+.month-task-item {
+  min-width: 0;
+}
+.month-task {
+  width: 100%;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 7px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+.month-task:hover {
+  border-color: var(--task-hover-border);
+  box-shadow: var(--task-hover-shadow);
+}
+.month-task:focus-visible {
+  outline: 2px solid var(--accent-focus);
+  outline-offset: 1px;
+}
+.month-task > .task-status-mark {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  color: var(--accent-strong);
+  margin: 0;
+}
+.month-task > .last-editor-mark .icon {
+  width: 13px;
+  height: 13px;
+}
+.month-task-text {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+.month-task-marker {
+  max-width: 76px;
+  min-height: 15px;
+  flex: 0 1 auto;
+  padding: 0 4px;
+  overflow: hidden;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.month-task-marker .task-marker-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 860px) {
+  .board.month-view {
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+  }
+}

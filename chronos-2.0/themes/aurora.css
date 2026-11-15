@@ -1,0 +1,142 @@
+/* Aurora — polar night with a green-violet glow; glacier daylight in the light scheme. */
+:root {
+  --marker-l: 45%;
+  --marker-c: 0.13;
+  --chronos-theme-id: "aurora";
+  --chronos-theme-name: "Aurora";
+  --chronos-theme-icon-path: "M2,9C5,5 8,5 12,9S19,13 22,9V12C19,16 15,16 12,12S5,8 2,12ZM2,15C5,11 8,11 12,15S19,19 22,15V18C19,22 15,22 12,18S5,14 2,18ZM17,1L17.8,3.2L20,4L17.8,4.8L17,7L16.2,4.8L14,4L16.2,3.2Z";
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --task-text-size: 0.84rem;
+  --radius-none: 0;
+  --radius-sm: 10px;
+  --radius-compact: 13px;
+  --radius-md: 14px;
+  --radius-card: 16px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-panel: 24px;
+  --radius-modal: 28px;
+  --radius-pill: 999px;
+  --backdrop-modal: blur(6px);
+  --backdrop-bubble: blur(10px) saturate(1.3);
+  --backdrop-panel: blur(18px) saturate(1.3);
+  --backdrop-header: blur(20px) saturate(1.3);
+  --aurora-violet: #6a4fd0;
+  color-scheme: light;
+  --body-bg:
+    radial-gradient(ellipse 70% 55% at 16% -12%, rgba(64, 201, 162, 0.3), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 88% -8%, rgba(138, 116, 240, 0.24), transparent 64%),
+    radial-gradient(ellipse 90% 45% at 55% 112%, rgba(80, 170, 225, 0.2), transparent 62%),
+    #f1f6f8;
+  --accent: #0b7d68;
+  --accent-strong: #076253;
+  --accent-soft: #d9f1ea;
+  --accent-focus: rgba(11, 125, 104, 0.72);
+  --accent-border: rgba(11, 125, 104, 0.3);
+  --accent-ring: rgba(11, 125, 104, 0.15);
+  --accent-wash: rgba(11, 125, 104, 0.08);
+  --success: #2c7d3f;
+  --success-ring: rgba(44, 125, 63, 0.18);
+  --amber: #9c6100;
+  --red: #cf4458;
+  --urgent: var(--red);
+  --border: rgba(19, 50, 66, 0.1);
+  --circle-border: rgba(19, 50, 66, 0.17);
+  --text: #12232d;
+  --muted: #52646f;
+  --faint: #5e707b;
+  --panel: rgba(250, 253, 254, 0.66);
+  --panel-solid: #f8fbfc;
+  --panel-2: #eaf2f4;
+  --card: #ffffff;
+  --hover: #e2f2ee;
+  --strong-text: #f8fbfc;
+  --primary-bg: #0a6958;
+  --primary-text: #f8fbfc;
+  --primary-hover: #075447;
+  --header-bg: rgba(244, 249, 251, 0.7);
+  --neutral-chip-bg: #d9e3e7;
+  --neutral-chip-text: #4a5c67;
+  --today-bg: linear-gradient(120deg, #d6f1e8 0%, #e9e5fb 100%);
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(11, 125, 104, 0.3);
+  --task-hover-shadow: 0 10px 26px rgba(20, 80, 90, 0.13);
+  --search-match-bg: #e6f5f0;
+  --check-border: #c6d3d8;
+  --danger-soft: #fdf1f3;
+  --overlay: rgba(12, 28, 40, 0.4);
+  --menu-bg: rgba(249, 252, 253, 0.94);
+  --popover-bg: rgba(249, 252, 253, 0.98);
+  --menu-shadow: 0 20px 50px rgba(16, 60, 76, 0.18);
+  --modal-shadow: 0 24px 70px rgba(16, 60, 76, 0.22);
+  --scroll-thumb: #c9d6da;
+  --scroll-thumb-hover: #a9bbc1;
+  --date-out: #5c6d76;
+  --shadow-sm: 0 2px 5px rgba(16, 60, 76, 0.06);
+}
+:root[data-theme="dark"] {
+  --marker-l: 82%;
+  --marker-c: 0.12;
+  --aurora-violet: #b3a1ff;
+  color-scheme: dark;
+  --body-bg:
+    radial-gradient(ellipse 75% 60% at 14% 4%, rgba(64, 224, 170, 0.36), transparent 66%),
+    radial-gradient(ellipse 65% 58% at 86% 2%, rgba(150, 110, 255, 0.38), transparent 68%),
+    radial-gradient(ellipse 95% 50% at 55% 108%, rgba(40, 150, 220, 0.26), transparent 66%),
+    #090f1c;
+  --accent: #5fe3c4;
+  --accent-strong: #8ff0d8;
+  --accent-soft: rgba(95, 227, 196, 0.15);
+  --accent-focus: rgba(95, 227, 196, 0.78);
+  --accent-border: rgba(95, 227, 196, 0.36);
+  --accent-ring: rgba(95, 227, 196, 0.18);
+  --accent-wash: rgba(95, 227, 196, 0.09);
+  --success: #8bdd86;
+  --success-ring: rgba(139, 221, 134, 0.2);
+  --amber: #f3c969;
+  --red: #ff7d8c;
+  --urgent: var(--red);
+  --border: rgba(200, 230, 255, 0.1);
+  --circle-border: rgba(200, 230, 255, 0.19);
+  --text: #e9f2f5;
+  --muted: #a6b6c5;
+  --faint: #95a6b7;
+  --panel: rgba(17, 27, 45, 0.62);
+  --panel-solid: #111b2d;
+  --panel-2: #17243a;
+  --card: #18253b;
+  --hover: rgba(95, 227, 196, 0.11);
+  --strong-text: #0b1422;
+  --primary-bg: #5fe3c4;
+  --primary-text: #062019;
+  --primary-hover: #86efd6;
+  --header-bg: rgba(10, 17, 30, 0.6);
+  --neutral-chip-bg: #24334b;
+  --neutral-chip-text: #a9b8c8;
+  --today-bg:
+    linear-gradient(120deg, rgba(95, 227, 196, 0.2) 0%, rgba(150, 110, 255, 0.18) 100%),
+    var(--panel);
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(95, 227, 196, 0.36);
+  --task-hover-shadow: 0 10px 28px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(95, 227, 196, 0.08);
+  --search-match-bg: #173340;
+  --check-border: #45566e;
+  --danger-soft: rgba(255, 125, 140, 0.1);
+  --overlay: rgba(4, 8, 16, 0.64);
+  --menu-bg: rgba(17, 27, 45, 0.94);
+  --popover-bg: rgba(17, 27, 45, 0.98);
+  --menu-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --modal-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  --scroll-thumb: #2f405a;
+  --scroll-thumb-hover: #4b6080;
+  --date-out: #8fa0b1;
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+/* The wordmark carries the same green-to-violet sweep as the sky. */
+.brand-wordmark {
+  background: linear-gradient(90deg, var(--accent-strong), var(--aurora-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

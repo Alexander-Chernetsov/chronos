@@ -1,0 +1,221 @@
+/* Theme study: graphite and moss */
+      :root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+        color-scheme: light;
+  --chronos-theme-id: "graphite-moss";
+  --chronos-theme-name: "Графит и мох";
+  --chronos-theme-icon-path: "M20,3C13,3 7,6 5,11C3.5,14.5 5,18 7.5,19.5C9,16 11.5,13.5 15,12C12,14 10,16.5 9,20.5C13,21 17,19 19,16C22,11.5 20,3 20,3Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-compact: 11px;
+  --radius-md: 3px;
+  --radius-card: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 3px;
+  --radius-panel: 4px;
+  --radius-modal: 4px;
+  --radius-pill: 3px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+        --body-bg: oklch(94.5% 0.012 102);
+        --accent: oklch(43% 0.095 145);
+        --accent-strong: oklch(34% 0.09 145);
+        --accent-soft: oklch(89.5% 0.04 145);
+        --accent-focus: oklch(43% 0.095 145 / 0.74);
+        --accent-border: oklch(43% 0.095 145 / 0.28);
+  --today-border: var(--accent-border);
+        --accent-ring: oklch(43% 0.095 145 / 0.14);
+        --accent-wash: oklch(43% 0.095 145 / 0.075);
+        --success: oklch(46% 0.1 155);
+        --success-ring: oklch(46% 0.1 155 / 0.18);
+        --amber: oklch(57% 0.12 78);
+        --urgent: oklch(57% 0.15 43);
+        --red: oklch(50% 0.17 25);
+        --border: oklch(27% 0.018 145 / 0.1);
+        --circle-border: oklch(27% 0.018 145 / 0.18);
+        --text: oklch(24% 0.018 145);
+        --muted: oklch(47% 0.018 145);
+        --faint: oklch(52% 0.016 145);
+        --panel: oklch(97.5% 0.012 102 / 0.9);
+        --panel-solid: oklch(97.5% 0.012 102);
+        --panel-2: oklch(91.5% 0.015 102);
+        --card: oklch(98.5% 0.009 102);
+        --hover: oklch(89% 0.028 145);
+        --strong-text: oklch(97% 0.01 102);
+        --primary-bg: oklch(34% 0.09 145);
+        --primary-text: oklch(97% 0.01 102);
+        --primary-hover: oklch(29% 0.085 145);
+        --header-bg: oklch(24% 0.02 145);
+        --neutral-chip-bg: oklch(86% 0.015 145);
+        --neutral-chip-text: oklch(39% 0.02 145);
+        --today-bg: oklch(91.5% 0.035 145);
+        --task-hover-border: oklch(43% 0.095 145 / 0.22);
+        --task-hover-shadow: 0 9px 20px oklch(24% 0.018 145 / 0.09);
+        --search-match-bg: oklch(90.5% 0.04 145);
+        --check-border: oklch(68% 0.02 145);
+        --danger-soft: oklch(94% 0.03 25);
+        --overlay: oklch(14% 0.02 145 / 0.52);
+        --menu-bg: oklch(97.5% 0.012 102);
+        --popover-bg: oklch(97.5% 0.012 102);
+        --menu-shadow: 0 18px 44px oklch(20% 0.018 145 / 0.2);
+        --modal-shadow: 0 24px 64px oklch(20% 0.018 145 / 0.24);
+        --scroll-thumb: oklch(76% 0.018 145);
+        --scroll-thumb-hover: oklch(61% 0.03 145);
+        --date-out: oklch(49% 0.016 145);
+        --shadow-sm: 0 2px 4px oklch(24% 0.018 145 / 0.07);
+        --header-ink: oklch(94% 0.012 102);
+        --header-muted: oklch(72% 0.016 102);
+        --header-accent: oklch(76% 0.1 145);
+        --header-control: oklch(29% 0.022 145);
+        --header-hover: oklch(35% 0.04 145);
+        --header-border: oklch(94% 0.012 102 / 0.13);
+      }
+      :root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+        color-scheme: dark;
+        --body-bg: oklch(17% 0.018 145);
+        --accent: oklch(69% 0.1 145);
+        --accent-strong: oklch(78% 0.095 145);
+        --accent-soft: oklch(69% 0.1 145 / 0.14);
+        --accent-focus: oklch(69% 0.1 145 / 0.78);
+        --accent-border: oklch(69% 0.1 145 / 0.32);
+        --accent-ring: oklch(69% 0.1 145 / 0.17);
+        --accent-wash: oklch(69% 0.1 145 / 0.08);
+        --success: oklch(72% 0.1 155);
+        --success-ring: oklch(72% 0.1 155 / 0.2);
+        --amber: oklch(76% 0.11 78);
+        --urgent: oklch(70% 0.14 43);
+        --red: oklch(65% 0.17 25);
+        --border: oklch(92% 0.012 102 / 0.09);
+        --circle-border: oklch(92% 0.012 102 / 0.17);
+        --text: oklch(91% 0.012 102);
+        --muted: oklch(69% 0.016 102);
+        --faint: oklch(63% 0.016 102);
+        --panel: oklch(21% 0.018 145 / 0.94);
+        --panel-solid: oklch(21% 0.018 145);
+        --panel-2: oklch(24% 0.02 145);
+        --card: oklch(24% 0.02 145);
+        --hover: oklch(69% 0.1 145 / 0.1);
+        --strong-text: oklch(16% 0.018 145);
+        --primary-bg: oklch(69% 0.1 145);
+        --primary-text: oklch(15% 0.018 145);
+        --primary-hover: oklch(76% 0.095 145);
+        --header-bg: oklch(13.5% 0.018 145);
+        --neutral-chip-bg: oklch(29% 0.018 145);
+        --neutral-chip-text: oklch(71% 0.016 102);
+        --today-bg: oklch(69% 0.1 145 / 0.1);
+        --task-hover-border: oklch(69% 0.1 145 / 0.24);
+        --task-hover-shadow: 0 9px 22px oklch(6% 0.015 145 / 0.38);
+        --search-match-bg: oklch(29% 0.04 145);
+        --check-border: oklch(42% 0.022 145);
+        --danger-soft: oklch(65% 0.17 25 / 0.1);
+        --overlay: oklch(5% 0.015 145 / 0.7);
+        --menu-bg: oklch(21% 0.018 145);
+        --popover-bg: oklch(21% 0.018 145);
+        --menu-shadow: 0 18px 44px oklch(5% 0.015 145 / 0.48);
+        --modal-shadow: 0 24px 64px oklch(5% 0.015 145 / 0.56);
+        --scroll-thumb: oklch(33% 0.02 145);
+        --scroll-thumb-hover: oklch(47% 0.03 145);
+        --date-out: oklch(60% 0.016 102);
+        --shadow-sm: 0 2px 4px oklch(5% 0.015 145 / 0.3);
+        --header-ink: oklch(91% 0.012 102);
+        --header-muted: oklch(66% 0.016 102);
+        --header-accent: oklch(73% 0.1 145);
+        --header-control: oklch(20% 0.02 145);
+        --header-hover: oklch(28% 0.04 145);
+        --header-border: oklch(91% 0.012 102 / 0.12);
+      }
+      .app-header {
+        --amber: oklch(84% 0.11 78);
+        --urgent: oklch(80% 0.12 43);
+        --red: oklch(78% 0.13 25);
+        --danger-soft: color-mix(in oklch, var(--red) 14%, transparent);
+        color: var(--header-ink);
+        background: var(--header-bg);
+        border-bottom-color: var(--header-border);
+      }
+      .app-header .brand,
+      .app-header .brand .icon {
+        color: var(--header-accent);
+      }
+      .app-header .week-nav,
+      .app-header .day-stepper,
+      .app-header .filter-control,
+      .app-header .file-control {
+        background: var(--header-control);
+        border-color: var(--header-border);
+        box-shadow: none;
+      }
+      .app-header .week-label {
+        color: var(--header-ink);
+      }
+      .app-header .stepper-label,
+      .app-header .icon-btn {
+        color: var(--header-muted);
+      }
+      .app-header .icon-btn {
+        background: transparent;
+        border-color: var(--header-border);
+        box-shadow: none;
+      }
+      .app-header .icon-btn:where(:not(:disabled)):hover,
+      .app-header button.stepper-label:where(:not(:disabled)):hover {
+        color: var(--header-ink);
+        background: var(--header-hover);
+      }
+      .app-header .icon-btn.active-toggle {
+        color: var(--header-accent);
+        border-color: color-mix(in oklch, var(--header-accent) 40%, transparent);
+        background: color-mix(in oklch, var(--header-accent) 16%, transparent);
+      }
+      .app-header .board-search-input {
+        color: var(--header-ink);
+        background: var(--header-hover);
+        border-color: var(--header-border);
+      }
+      .app-header .board-search-input::placeholder {
+        color: var(--header-muted);
+      }
+      .app-header .file-save {
+        color: var(--header-muted);
+      }
+      .app-header .file-save:where(:not(:disabled)):hover {
+        color: var(--header-ink);
+        background: var(--header-hover);
+      }
+      .app-header #trashCount {
+        color: var(--header-muted);
+        background: var(--header-hover);
+      }
+      .app-header .file-status.local,
+      .app-header .file-status.exported,
+      .app-header .file-status.cancelled {
+        --file-status-color: var(--header-muted);
+      }
+      .week-nav,
+      .day-stepper,
+      .filter-control,
+      .file-control,
+      .board-search-input,
+      .btn,
+      .stepper-label,
+      .bin-tabs,
+      .bin-tab {
+        border-radius: 4px;
+      }
+      .task .icon-btn,
+      .task .check-hit {
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+      }
+      .task .icon-btn:hover {
+        border-color: var(--circle-border);
+        background: var(--hover);
+      }

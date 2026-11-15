@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="und">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chronos</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%234f5fae" d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20C3,21.1 3.89,22 5,22H19C20.1,22 21,21.1 21,20V6C21,4.9 20.1,4 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z"/%3E%3C/svg%3E'
+    />
+    <link rel="stylesheet" href="styles/chronos.base.css" />
+    <link rel="stylesheet" href="styles/chronos.board.css" />
+    <link rel="stylesheet" href="styles/chronos.month.css" />
+    <link rel="stylesheet" href="styles/chronos.dialogs.css" />
+    <link rel="stylesheet" href="styles/chronos.views.css" />
+    <link rel="stylesheet" href="styles/chronos.help.css" />
+    <link rel="stylesheet" href="themes/chronos.theme.css" />
+
+    <link id="visualThemeStylesheet" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="boot-errors" id="bootErrors" role="alert" hidden>
+      <span id="schemaBootError" hidden></span>
+      <span id="localeBootError" hidden>Locale file is missing or invalid: locales/chronos.locale.js</span>
+      <span id="themeBootError" hidden>Theme file is missing or invalid: themes/chronos.theme.css</span>
+    </div>
+    <header class="app-header">
+      <div class="brand">
+        <span data-icon="calendar"></span
+        ><span class="brand-wordmark">Chronos <span class="brand-version" id="brandVersion"></span></span>
+      </div>
+      <div class="header-center">
+        <button
+          class="icon-btn"
+          id="overdueAction"
+          title=""
+          aria-label=""
+          data-action="move-overdue"
+         data-i18n-title="overdue.action_title" data-i18n-aria-label="overdue.action_aria_label">
+          <span data-icon="overdue"></span>
+          <span class="header-badge" id="overdueCount"></span>
+        </button>
+        <button
+          class="range-overflow-count"
+          id="leftOverflowCount"
+          data-action="jump-left-overflow"
+        ></button>
+        <div class="day-stepper" title="" data-i18n-title="ui.number_of_days">
+          <span class="stepper-label" id="dayCountKind"><!--i18n:ui.days--> </span
+          ><button class="icon-btn" data-action="days-minus" aria-label="" data-i18n-aria-label="ui.show_fewer_days"><span class="icon-glyph" aria-hidden="true">−</span></button
+          ><span id="dayCountLabel">7</span
+          ><button class="icon-btn" data-action="days-plus" aria-label="" data-i18n-aria-label="ui.show_more_days"><span class="icon-glyph" aria-hidden="true">+</span></button>
+        </div>
+        <div class="week-nav">
+          <button class="icon-btn" data-action="prev" aria-label="" data-i18n-aria-label="ui.previous_day"><span class="icon-glyph" aria-hidden="true">‹</span></button>
+          <div class="week-label" id="rangeLabel"></div>
+          <button class="icon-btn" data-action="pick-visible-date" aria-label="" title="" aria-haspopup="dialog" aria-controls="datePopover" aria-expanded="false" data-i18n-title="ui.choose_date" data-i18n-aria-label="ui.choose_date"><span class="icon-glyph" aria-hidden="true">▦</span></button>
+          <button class="icon-btn" data-action="next" aria-label="" data-i18n-aria-label="ui.next_day"><span class="icon-glyph" aria-hidden="true">›</span></button>
+          <button
+            class="icon-btn"
+            id="viewToggle"
+            title=""
+            aria-label=""
+            data-action="toggle-view"
+          >
+            <span data-icon="viewMonth"></span>
+          </button>
+        </div>
+        <div class="day-stepper" id="todayPositionControl" title="" data-i18n-title="ui.todays_position">
+          <button class="stepper-label" data-action="today" title="" aria-label="" data-i18n-title="ui.today_t" data-i18n-aria-label="ui.return_to_today_t_key"><!--i18n:ui.today--> </button
+          ><button class="icon-btn" data-action="today-pos-minus" aria-label="" data-i18n-aria-label="ui.move_today_left"><span class="icon-glyph" aria-hidden="true">−</span></button
+          ><span id="todayPosLabel">2</span
+          ><button class="icon-btn" data-action="today-pos-plus" aria-label="" data-i18n-aria-label="ui.move_today_right"><span class="icon-glyph" aria-hidden="true">+</span></button>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="filter-control" role="group" aria-label="" data-i18n-aria-label="ui.task_filters">
+          <div class="search-control" id="searchControl">
+            <button
+              class="icon-btn"
+              id="searchTrigger"
+              aria-controls="searchPopover"
+              aria-expanded="false"
+              title=""
+              aria-label=""
+              data-action="search"
+             data-i18n-title="ui.search_control_f" data-i18n-aria-label="ui.search_control_f_aria_label">
+              <span data-icon="search"></span>
+            </button>
+            <div class="search-popover" id="searchPopover" role="search" aria-label="" data-i18n-aria-label="ui.filter_tasks">
+              <input
+                class="board-search-input"
+                id="boardSearchInput"
+                placeholder=""
+                aria-label=""
+                data-i18n-aria-label="ui.filter_tasks" data-i18n-placeholder="ui.text_or_comment"/>
+            </div>
+          </div>
+          <div id="dimensionFilterControls"></div>
+          <div class="editor-filter-control">
+            <button
+              class="icon-btn filter-toggle editor-filter-trigger"
+              id="editorFilterTrigger"
+              title=""
+              aria-label=""
+              aria-controls="editorFilterPopover"
+              aria-expanded="false"
+              data-action="toggle-editor-filter-popover"
+             data-i18n-title="ui.last_text_editor_all" data-i18n-aria-label="ui.last_text_editor_all">
+              <span class="editor-filter-icon" id="editorFilterIcon"></span>
+            </button>
+            <div
+              class="editor-filter-popover"
+              id="editorFilterPopover"
+              role="radiogroup"
+              aria-orientation="horizontal"
+              aria-label=""
+             data-i18n-aria-label="ui.last_text_editor">
+              <div class="editor-filter-popover-actions">
+                <button
+                  class="icon-btn filter-toggle"
+                  title=""
+                  aria-label=""
+                  role="radio"
+                  data-action="set-editor-filter"
+                  data-editor-filter="human"
+                 data-i18n-title="ui.user_only" data-i18n-aria-label="filters.user_only_aria_label">
+                  <span data-icon="human"></span>
+                </button>
+                <button
+                  class="icon-btn filter-toggle"
+                  title=""
+                  aria-label=""
+                  role="radio"
+                  data-action="set-editor-filter"
+                  data-editor-filter="agent"
+                 data-i18n-title="ui.agent_only" data-i18n-aria-label="filters.agent_only_aria_label">
+                  <span data-icon="robot"></span>
+                </button>
+                <button
+                  class="icon-btn filter-toggle"
+                  title=""
+                  aria-label=""
+                  role="radio"
+                  data-action="set-editor-filter"
+                  data-editor-filter="all"
+                 data-i18n-title="ui.user_and_agent" data-i18n-aria-label="filters.all_editors_aria_label">
+                  <span class="editor-filter-pair">
+                    <span data-icon="human"></span><span data-icon="robot"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            class="icon-btn filter-clear neutral-action"
+            id="clearFiltersButton"
+            title=""
+            aria-label=""
+            data-action="clear-filters"
+            disabled
+           data-i18n-title="ui.clear_filters" data-i18n-aria-label="ui.clear_filters">
+            <span class="icon-glyph" aria-hidden="true">×</span>
+          </button>
+        </div>
+        <span class="header-total" id="activeCount"></span>
+        <button class="icon-btn" title="" aria-label="" data-action="archive" data-i18n-title="ui.done" data-i18n-aria-label="ui.done">
+          <span data-icon="archive"></span>
+          <span class="header-badge" id="archiveCount"></span>
+        </button>
+        <button class="icon-btn" title="" aria-label="" data-action="trash" data-i18n-title="ui.bin" data-i18n-aria-label="ui.bin">
+          <span data-icon="trash"></span>
+          <span class="header-badge" id="trashCount"></span>
+        </button>
+        <div class="file-control">
+          <button
+            class="icon-btn file-save"
+            title=""
+            aria-label=""
+            data-action="save-file"
+           data-i18n-title="ui.save_control_s" data-i18n-aria-label="ui.save_control_s_aria_label">
+            <span data-icon="save"></span>
+          </button>
+          <button
+            class="file-status local"
+            id="saveNote"
+            title=""
+            aria-label=""
+            data-action="toggle-file-popover"
+            aria-controls="filePopover"
+            aria-expanded="false"
+           data-i18n-title="ui.no_file" data-i18n-aria-label="ui.no_file"></button>
+          <div class="file-popover" id="filePopover" role="group" aria-label="" data-i18n-aria-label="ui.file_actions">
+            <div class="file-popover-actions">
+              <button
+                class="icon-btn"
+                title=""
+                aria-label=""
+                data-action="open-file"
+               data-i18n-title="ui.open_file" data-i18n-aria-label="ui.open_file">
+                <span data-icon="folder"></span>
+              </button>
+              <button
+                class="icon-btn"
+                id="disconnectFileBtn"
+                title=""
+                aria-label=""
+                data-action="disconnect-file"
+               data-i18n-title="ui.disconnect_file" data-i18n-aria-label="ui.disconnect_file">
+                <span data-icon="unlink"></span>
+              </button>
+              <button
+                class="icon-btn danger-on-interaction"
+                id="clearDataBtn"
+                title=""
+                aria-label=""
+                data-action="open-clear-tasks"
+                aria-controls="clearPopover"
+                aria-expanded="false"
+               data-i18n-title="ui.clear_all_data" data-i18n-aria-label="ui.clear_all_data">
+                <span data-icon="trash"></span>
+              </button>
+              <button
+                class="icon-btn neutral-action"
+                title=""
+                aria-label=""
+                data-action="close-file-popover"
+               data-i18n-title="ui.close" data-i18n-aria-label="ui.close">
+                <span class="icon-glyph" aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+          <div class="clear-popover" id="clearPopover" role="group" aria-label="" data-i18n-aria-label="ui.clear_all_data">
+            <div class="clear-popover-actions">
+              <button
+                class="icon-btn file-save"
+                title=""
+                aria-label=""
+                data-action="clear-after-export"
+               data-i18n-title="ui.save_and_clear" data-i18n-aria-label="ui.save_and_clear">
+                <span data-icon="save"></span>
+              </button>
+              <button
+                class="icon-btn danger"
+                title=""
+                aria-label=""
+                data-action="clear-local"
+               data-i18n-title="ui.clear_without_saving" data-i18n-aria-label="ui.clear_without_saving">
+                <span data-icon="trash"></span>
+              </button>
+              <button
+                class="icon-btn neutral-action"
+                title=""
+                aria-label=""
+                data-action="close-clear-popover"
+               data-i18n-title="ui.cancel" data-i18n-aria-label="ui.cancel">
+                <span class="icon-glyph" aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="dimension-manager-control">
+          <button class="icon-btn" id="dimensionManagerToggle" type="button"
+            data-action="toggle-dimension-manager" aria-controls="dimensionManagerPopover" aria-expanded="false"
+            data-i18n-title="dimensions.title" data-i18n-aria-label="dimensions.title">
+            <span data-icon="layers"></span>
+          </button>
+          <section class="dimension-manager-popover" id="dimensionManagerPopover" role="group" aria-labelledby="dimensionSettingsHeading">
+            <div class="dimension-manager-heading">
+              <h3 id="dimensionSettingsHeading"><!--i18n:dimensions.title--> </h3>
+              <button class="icon-btn neutral-action" type="button" data-action="close-dimension-manager"
+                data-i18n-title="ui.close" data-i18n-aria-label="ui.close"><span class="icon-glyph" aria-hidden="true">×</span></button>
+            </div>
+            <ul class="dimension-list" id="dimensionColors"></ul>
+            <label for="newDimensionSymbol"><!--i18n:dimensions.new_symbol--> </label>
+            <form class="dimension-input-row" id="addDimensionForm">
+              <input id="newDimensionSymbol" type="text" autocomplete="off" spellcheck="false" />
+              <button class="icon-btn dimension-add" type="submit" data-i18n-title="dimensions.add" data-i18n-aria-label="dimensions.add"><span class="icon-glyph" aria-hidden="true">+</span></button>
+            </form>
+            <p id="dimensionError" role="alert" hidden></p>
+          </section>
+        </div>
+        <div class="settings-control">
+          <button
+            class="icon-btn"
+            id="settingsToggle"
+            title=""
+            aria-label=""
+            aria-controls="settingsPopover"
+            aria-expanded="false"
+            data-action="toggle-settings-popover"
+          >
+            <span data-icon="settings"></span>
+          </button>
+          <div
+            class="visual-theme-popover settings-popover"
+            id="settingsPopover"
+            role="group"
+            aria-label=""
+            data-i18n-aria-label="ui.settings"
+          >
+            <div
+              class="visual-theme-popover-actions settings-popover-row"
+              id="localePopoverActions"
+              role="group"
+            ></div>
+            <div class="settings-popover-separator" role="separator"></div>
+            <div
+              class="visual-theme-popover-actions settings-popover-row"
+              id="visualThemePopoverActions"
+              role="group"
+              aria-label=""
+              data-i18n-aria-label="ui.appearance"
+            >
+              <button
+                class="icon-btn"
+                id="themeToggle"
+                title=""
+                aria-label=""
+                aria-pressed="false"
+                data-action="toggle-theme"
+              >
+                <span data-icon="moon"></span>
+              </button>
+            </div>
+            <div class="settings-version" id="settingsVersion"></div>
+          </div>
+        </div>
+        <button
+          class="icon-btn"
+          title=""
+          aria-label=""
+          data-action="help"
+         data-i18n-title="help.guide.title" data-i18n-aria-label="help.open_aria_label">
+          <span data-icon="info" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+    <main class="board" id="board" tabindex="-1" aria-label="" data-i18n-aria-label="ui.task_board"></main>
+    <div
+      class="column-actions-popover"
+      id="columnActionsPopover"
+      role="menu"
+      aria-orientation="horizontal"
+      aria-label=""
+     data-i18n-aria-label="ui.column_actions">
+      <div class="column-actions-popover-actions" id="columnActionsPopoverActions"></div>
+    </div>
+    <div class="drag-dock drop-zone-grid" id="dragDock" aria-hidden="true">
+      <div
+        class="drag-dock-target drag-dock-trash task-drop-target"
+        data-key="__trash__"
+      >
+        <span data-icon="trash" aria-hidden="true"></span>
+        <span><!--i18n:ui.move_to_bin--> </span>
+      </div>
+      <div
+        class="drag-dock-target drag-dock-archive task-drop-target"
+        data-key="__archive__"
+      >
+        <span data-icon="archive" aria-hidden="true"></span>
+        <span><!--i18n:ui.done--> </span>
+      </div>
+    </div>
+    <div class="sr-only" id="fileStatusLive" aria-live="polite" aria-atomic="true"></div>
+    <div class="sr-only" id="copyStatus" aria-live="polite" aria-atomic="true"></div>
+    <div class="copy-feedback-bubble" id="copyFeedbackBubble" aria-hidden="true"></div>
+    <div class="context-menu" id="menu"></div>
+    <div class="modal-layer task-editor-modal" id="taskEditorModal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="taskEditorHeading">
+        <div class="modal-head">
+          <div class="task-editor-heading">
+            <div class="modal-title" id="taskEditorHeading"><!--i18n:ui.task--> </div>
+            <div class="task-editor-meta" id="taskEditorMeta"></div>
+          </div>
+          <div class="task-editor-head-actions">
+            <span class="task-editor-head-default">
+              <button class="icon-btn danger-on-interaction" id="taskEditorTrashAction" title="" aria-label="" aria-expanded="false" aria-controls="taskEditorTrashConfirm" data-action="request-task-editor-trash" data-i18n-title="ui.move_task_to_bin" data-i18n-aria-label="ui.move_task_to_bin">
+                <span data-icon="trash"></span>
+              </button>
+              <button class="icon-btn neutral-action" title="" aria-label="" data-action="close-task-editor" data-i18n-title="ui.close" data-i18n-aria-label="ui.close_task_editor"><span class="icon-glyph" aria-hidden="true">×</span></button>
+            </span>
+            <span class="task-editor-trash-confirm" id="taskEditorTrashConfirm">
+              <span class="inline-confirm-question"><!--i18n:ui.move_to_bin_question--> </span>
+              <button class="icon-btn danger-on-interaction" title="" aria-label="" data-action="confirm-task-editor-trash" data-i18n-title="ui.confirm_move_to_bin" data-i18n-aria-label="ui.confirm_move_to_bin">
+                <span data-icon="check"></span>
+              </button>
+              <button class="icon-btn neutral-action" title="" aria-label="" data-action="cancel-task-editor-confirm" data-i18n-title="ui.cancel" data-i18n-aria-label="ui.cancel"><span class="icon-glyph" aria-hidden="true">×</span></button>
+            </span>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="task-editor-fields">
+            <label class="task-editor-field">
+              <span><!--i18n:ui.task_title--> </span>
+              <input id="taskTitleInput" type="text" autocomplete="off" />
+            </label>
+            <label class="task-editor-field">
+              <span><!--i18n:ui.task_comment--> </span>
+              <textarea
+                id="taskCommentText"
+                placeholder=""
+               data-i18n-placeholder="ui.details_links_notes"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="modal-foot task-editor-modal-foot">
+          <div class="task-editor-foot-default">
+            <div class="task-editor-foot-info">
+              <span class="save-note" id="taskEditorStatus"><!--i18n:ui.control_enter_save_esc_close--> </span>
+              <button class="btn btn-ghost comment-clear" data-action="clear-comment"><!--i18n:ui.clear_comment--> </button>
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-ghost neutral-action" data-action="close-task-editor"><!--i18n:ui.cancel--> </button>
+              <button class="btn btn-primary" data-action="save-task-editor"><!--i18n:ui.save--> </button>
+            </div>
+          </div>
+          <div class="task-editor-trash-note" id="taskEditorTrashNote"></div>
+          <div class="task-editor-discard-confirm">
+            <span class="inline-confirm-question"><!--i18n:task_editor.discard_confirmation--> </span>
+            <div class="modal-actions">
+              <button class="btn btn-ghost neutral-action" data-action="cancel-task-editor-confirm"><!--i18n:task_editor.return_to_editing--> </button>
+              <button class="btn btn-ghost task-editor-discard-action" data-action="confirm-task-editor-discard"><!--i18n:task_editor.discard_action--> </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-layer" id="binModal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="binTitle">
+        <div class="sr-only" id="binTitle"><!--i18n:ui.done_and_bin--> </div>
+        <div class="modal-head bin-modal-head">
+          <div class="bin-tabs" role="tablist" aria-label="" data-i18n-aria-label="ui.done_and_bin">
+            <button class="bin-tab" id="binTabArchive" type="button" role="tab" aria-controls="binPanel" aria-selected="true" data-action="switch-bin" data-bin="archive">
+              <span data-icon="archive" aria-hidden="true"></span>
+              <span><!--i18n:ui.done--> </span>
+              <span class="bin-tab-count" id="binArchiveCount"></span>
+            </button>
+            <button class="bin-tab" id="binTabTrash" type="button" role="tab" aria-controls="binPanel" aria-selected="false" tabindex="-1" data-action="switch-bin" data-bin="trash">
+              <span data-icon="trash" aria-hidden="true"></span>
+              <span><!--i18n:ui.bin--> </span>
+              <span class="bin-tab-count" id="binTrashCount"></span>
+            </button>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-ghost bin-clear-action" id="binClearAction" aria-expanded="false" aria-controls="binClearConfirm" data-action="clear-bin"><!--i18n:ui.move_all_to_bin--> </button>
+            <span class="bin-clear-confirm" id="binClearConfirm">
+              <span class="bin-clear-question" id="binClearQuestion"><!--i18n:ui.move_all--> </span>
+              <button class="icon-btn danger-on-interaction" title="" aria-label="" data-action="confirm-clear-bin" data-i18n-title="ui.confirm_clear" data-i18n-aria-label="ui.confirm_clear">
+                <span data-icon="check"></span>
+              </button>
+              <button class="icon-btn neutral-action" title="" aria-label="" data-action="cancel-clear-bin" data-i18n-title="ui.cancel" data-i18n-aria-label="ui.cancel_clear"><span class="icon-glyph" aria-hidden="true">×</span></button>
+            </span>
+            <button class="icon-btn neutral-action" title="" aria-label="" data-action="close-bin" data-i18n-title="ui.close" data-i18n-aria-label="ui.close_done_and_bin"><span class="icon-glyph" aria-hidden="true">×</span></button>
+          </div>
+        </div>
+        <div class="modal-body" id="binPanel" role="tabpanel" aria-labelledby="binTabArchive" tabindex="0"><div id="binBody"></div></div>
+        <div class="sr-only" id="binStatus" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </div>
+    <div class="help-layer" id="helpLayer">
+      <div class="help-panel" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <header class="help-header">
+          <h2 id="helpTitle"><!--i18n:help.guide.title--> </h2>
+          <button class="icon-btn help-close neutral-action" title="" aria-label="" data-action="close-help" data-i18n-title="ui.close" data-i18n-aria-label="ui.close_help"><span class="icon-glyph" aria-hidden="true">×</span></button>
+        </header>
+        <article class="help-article" tabindex="0">
+          <section class="help-section" id="help-data">
+            <h3><!--i18n:help.data.title--> </h3>
+            <p><!--i18n:help.data.local--> </p>
+            <p><!--i18n:help.data.linked--> </p>
+            <p><!--i18n:help.troubleshooting.conflict--> </p>
+          </section>
+          <section class="help-section" id="help-lifecycle">
+            <h3><!--i18n:help.lifecycle.title--> </h3>
+            <p><!--i18n:help.lifecycle.retention--> </p>
+          </section>
+          <section class="help-section" id="help-troubleshooting">
+            <h3><!--i18n:help.troubleshooting.title--> </h3>
+            <p><!--i18n:help.troubleshooting.data--> </p>
+          </section>
+          <section class="help-section" id="help-shortcuts">
+            <h3><!--i18n:help.shortcuts.title--> </h3>
+            <p><!--i18n:help.shortcuts.introduction--> </p>
+              <dl class="shortcut-list">
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">N</kbd></dt><dd><!--i18n:help.shortcuts.new_today--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Shift + N</kbd></dt><dd><!--i18n:help.shortcuts.new_list--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">I</kbd></dt><dd><!--i18n:help.shortcuts.new_inbox--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">C</kbd></dt><dd><!--i18n:help.shortcuts.new_control--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Ctrl + F</kbd></dt><dd><!--i18n:help.shortcuts.search--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">T</kbd></dt><dd><!--i18n:help.shortcuts.today--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">[ / ]</kbd></dt><dd><!--i18n:help.shortcuts.navigation--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Shift + T</kbd></dt><dd><!--i18n:help.shortcuts.overdue--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Enter</kbd></dt><dd><!--i18n:help.shortcuts.save_title--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Shift + Enter</kbd></dt><dd><!--i18n:help.shortcuts.edit_comment--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Ctrl + Enter</kbd></dt><dd><!--i18n:help.shortcuts.save_editor--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Ctrl + S</kbd></dt><dd><!--i18n:help.shortcuts.save--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">Esc</kbd></dt><dd><!--i18n:help.shortcuts.escape--> </dd></div>
+                <div class="shortcut-row"><dt><kbd class="shortcut-key">?</kbd></dt><dd><!--i18n:help.shortcuts.open_help--> </dd></div>
+              </dl>
+          </section>
+        </article>
+      </div>
+    </div>
+    <div class="modal-layer" id="confirmationModal">
+      <div
+        class="modal confirmation-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirmationTitle"
+        aria-describedby="confirmationDescription"
+      >
+        <div class="modal-head">
+          <div class="modal-title" id="confirmationTitle"></div>
+        </div>
+        <div class="modal-body">
+          <p class="confirmation-description" id="confirmationDescription"></p>
+        </div>
+        <div class="modal-foot">
+          <div class="modal-actions">
+            <button class="btn btn-ghost neutral-action" id="confirmationCancel" data-action="cancel-app-confirmation"></button>
+            <button class="btn btn-primary" id="confirmationConfirm" data-action="confirm-app-confirmation"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="date-popover" id="datePopover" role="dialog" aria-label="" data-i18n-aria-label="ui.date_picker"></div>
+    <script src="locales/chronos.locale.js"></script>
+    <script src="scripts/chronos.core.js"></script>
+    <script src="scripts/chronos.storage.js"></script>
+    <script src="scripts/chronos.customization.js"></script>
+    <script src="scripts/chronos.board.js"></script>
+    <script src="scripts/chronos.month.js"></script>
+    <script src="scripts/chronos.tasks.js"></script>
+    <script src="scripts/chronos.dialogs.js"></script>
+    <script src="scripts/chronos.js"></script>
+
+  </body>
+</html>

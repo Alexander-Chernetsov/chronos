@@ -1,0 +1,7 @@
+.claude/
+.serena/
+backups/
+output/
+tmp/
+chronos-data*.json
+planner-data*.json

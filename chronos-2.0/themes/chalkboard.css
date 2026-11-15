@@ -1,0 +1,145 @@
+/* Chalkboard — green school slate with chalk in the dark scheme, a marker whiteboard in the light one. */
+:root {
+  --marker-l: 45%;
+  --marker-c: 0.15;
+  --chronos-theme-id: "chalkboard";
+  --chronos-theme-name: "Chalkboard";
+  --chronos-theme-icon-path: "M3,4H21V16H3ZM5,6V14H19V6ZM2,17H22V19H2ZM7,19H9L8,22H6ZM15,19H17L18,22H16Z";
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --task-text-size: 0.84rem;
+  --radius-none: 0;
+  --radius-sm: 5px;
+  --radius-compact: 6px;
+  --radius-md: 7px;
+  --radius-card: 8px;
+  --radius-lg: 9px;
+  --radius-xl: 10px;
+  --radius-panel: 12px;
+  --radius-modal: 14px;
+  --radius-pill: 999px;
+  --backdrop-modal: blur(3px);
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --chalkboard-ledge: #aab4bb;
+  color-scheme: light;
+  --body-bg:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.7) 0%, transparent 38%, rgba(255, 255, 255, 0.55) 62%, transparent 100%),
+    #eef1f3;
+  --accent: #1560c2;
+  --accent-strong: #0f4c9f;
+  --accent-soft: #dde9fa;
+  --accent-focus: rgba(21, 96, 194, 0.74);
+  --accent-border: rgba(21, 96, 194, 0.34);
+  --accent-ring: rgba(21, 96, 194, 0.15);
+  --accent-wash: rgba(21, 96, 194, 0.07);
+  --success: #177a43;
+  --success-ring: rgba(23, 122, 67, 0.18);
+  --amber: #a56400;
+  --red: #cc2f2a;
+  --urgent: var(--red);
+  --border: rgba(24, 38, 54, 0.2);
+  --circle-border: rgba(24, 38, 54, 0.22);
+  --text: #18263a;
+  --muted: #52606f;
+  --faint: #5d6a78;
+  --panel: #f7f9fa;
+  --panel-solid: #f9fafb;
+  --panel-2: #e9edf0;
+  --card: #ffffff;
+  --hover: #e4edf9;
+  --strong-text: #f9fafb;
+  --primary-bg: #114fa5;
+  --primary-text: #f9fafb;
+  --primary-hover: #0c3f86;
+  --header-bg: #f3f5f7;
+  --neutral-chip-bg: #d8dee3;
+  --neutral-chip-text: #485665;
+  --today-bg: #dfeafa;
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(21, 96, 194, 0.55);
+  --task-hover-shadow: 0 6px 16px rgba(24, 38, 54, 0.1);
+  --search-match-bg: #e8f0fb;
+  --check-border: #c3ccd4;
+  --danger-soft: #fdf0ef;
+  --overlay: rgba(24, 38, 54, 0.4);
+  --menu-bg: #fbfcfd;
+  --popover-bg: #fbfcfd;
+  --menu-shadow: 0 16px 40px rgba(24, 38, 54, 0.18);
+  --modal-shadow: 0 22px 60px rgba(24, 38, 54, 0.22);
+  --scroll-thumb: #c8d0d6;
+  --scroll-thumb-hover: #a9b4bc;
+  --date-out: #66727f;
+  --shadow-sm: 0 1px 2px rgba(24, 38, 54, 0.06);
+}
+:root[data-theme="dark"] {
+  --marker-l: 85%;
+  --marker-c: 0.1;
+  --chalkboard-ledge: #8a6442;
+  color-scheme: dark;
+  --body-bg:
+    radial-gradient(ellipse 55% 40% at 28% 22%, rgba(255, 255, 255, 0.06), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 78% 72%, rgba(255, 255, 255, 0.045), transparent 70%),
+    #22362d;
+  --accent: #f6d96f;
+  --accent-strong: #ffe696;
+  --accent-soft: rgba(246, 217, 111, 0.14);
+  --accent-focus: rgba(246, 217, 111, 0.8);
+  --accent-border: rgba(246, 217, 111, 0.4);
+  --accent-ring: rgba(246, 217, 111, 0.18);
+  --accent-wash: rgba(246, 217, 111, 0.08);
+  --success: #a6e3ab;
+  --success-ring: rgba(166, 227, 171, 0.2);
+  --amber: #ffc97a;
+  --red: #ffa093;
+  --urgent: var(--red);
+  --border: rgba(241, 239, 230, 0.26);
+  --circle-border: rgba(241, 239, 230, 0.26);
+  --text: #f2f0e7;
+  --muted: #bcc8bc;
+  --faint: #a9b7aa;
+  --panel: #273d33;
+  --panel-solid: #283e34;
+  --panel-2: #2e473b;
+  --card: #294036;
+  --hover: rgba(242, 240, 231, 0.09);
+  --strong-text: #22362d;
+  --primary-bg: #f6d96f;
+  --primary-text: #22362d;
+  --primary-hover: #ffe696;
+  --header-bg: #1d2f27;
+  --neutral-chip-bg: #3a5547;
+  --neutral-chip-text: #c3cfc3;
+  --today-bg: linear-gradient(180deg, rgba(246, 217, 111, 0.17), rgba(246, 217, 111, 0.05)), var(--panel);
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(242, 240, 231, 0.6);
+  --task-hover-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  --search-match-bg: #3a4a34;
+  --check-border: #5d7667;
+  --danger-soft: rgba(255, 160, 147, 0.1);
+  --overlay: rgba(10, 18, 14, 0.62);
+  --menu-bg: #263b31;
+  --popover-bg: #263b31;
+  --menu-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
+  --modal-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+  --scroll-thumb: #456052;
+  --scroll-thumb-hover: #5f7c6c;
+  --date-out: #9eada0;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* Tasks are outlined by hand: a dashed stroke of the same width as the base frame. */
+.task {
+  border-style: dashed;
+}
+
+/* The header rests on the board ledge: wood under the slate, aluminium under the whiteboard. */
+.app-header {
+  box-shadow: 0 3px 0 var(--chalkboard-ledge);
+}
+
+/* Handwritten day numerals and wordmark; task text stays in the interface sans. */
+.brand-wordmark,
+.day-num {
+  font-family: "Segoe Print", "Bradley Hand", "Chalkboard SE", "Comic Sans MS", cursive;
+}

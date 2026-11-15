@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chronos Planning"
+  short_description: "Безопасная работа с задачами Chronos"
+  default_prompt: "Use $chronos-planning to review or update my Chronos tasks safely."

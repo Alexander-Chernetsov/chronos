@@ -1,0 +1,173 @@
+/* Theme: restrained early-2000s aqua interface */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "aqua-2001";
+  --chronos-theme-name: "Aqua 2001";
+  --chronos-theme-icon-path: "M12,2C8.5,6.4 5,10.2 5,14A7,7 0 0,0 19,14C19,10.2 15.5,6.4 12,2M8,14C8,11.9 9.7,9.4 12,6.5C14.3,9.4 16,11.9 16,14A4,4 0 0,1 8,14M9,14A3,3 0 0,0 15,14C15,12.8 14,11 12,9.2C10,11 9,12.8 9,14Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --radius-none: 0;
+  --radius-sm: 9px;
+  --radius-compact: 11px;
+  --radius-md: 12px;
+  --radius-card: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
+  --radius-panel: 20px;
+  --radius-modal: 22px;
+  --radius-pill: 999px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg:
+    radial-gradient(circle at 18% -10%, oklch(92% 0.1 205) 0, transparent 34%),
+    radial-gradient(circle at 90% 8%, oklch(92% 0.08 242) 0, transparent 30%),
+    linear-gradient(180deg, oklch(95% 0.035 210), oklch(90% 0.045 230));
+  --accent: oklch(58% 0.15 220);
+  --accent-strong: oklch(42% 0.15 225);
+  --accent-soft: oklch(88% 0.08 205);
+  --accent-focus: oklch(58% 0.15 220 / 0.76);
+  --accent-border: oklch(58% 0.15 220 / 0.4);
+  --accent-ring: oklch(58% 0.15 220 / 0.2);
+  --accent-wash: oklch(58% 0.15 220 / 0.09);
+  --success: oklch(52% 0.14 160);
+  --success-ring: oklch(52% 0.14 160 / 0.2);
+  --amber: oklch(65% 0.15 78);
+  --red: oklch(54% 0.2 27);
+  --urgent: var(--red);
+  --border: oklch(45% 0.08 225 / 0.14);
+  --circle-border: oklch(45% 0.08 225 / 0.24);
+  --text: oklch(24% 0.055 235);
+  --muted: oklch(43% 0.055 230);
+  --faint: oklch(51% 0.045 225);
+  --panel: oklch(98% 0.015 210 / 0.95);
+  --panel-solid: oklch(98% 0.015 210);
+  --panel-2: oklch(91% 0.045 210);
+  --card: oklch(99% 0.008 210);
+  --hover: oklch(88% 0.075 205);
+  --strong-text: oklch(99% 0.008 210);
+  --primary-bg: oklch(48% 0.16 225);
+  --primary-text: oklch(99% 0.008 210);
+  --primary-hover: oklch(41% 0.15 225);
+  --header-bg: oklch(98% 0.015 210 / 0.97);
+  --neutral-chip-bg: oklch(86% 0.04 220);
+  --neutral-chip-text: oklch(37% 0.06 230);
+  --today-bg: linear-gradient(180deg, oklch(93% 0.06 205), oklch(87% 0.075 220));
+  --today-border: var(--accent-border);
+  --task-hover-border: oklch(58% 0.15 220 / 0.46);
+  --task-hover-shadow: 0 8px 18px oklch(37% 0.1 230 / 0.16);
+  --search-match-bg: oklch(86% 0.09 205);
+  --check-border: oklch(51% 0.07 225);
+  --danger-soft: oklch(94% 0.045 27);
+  --overlay: oklch(18% 0.07 235 / 0.48);
+  --menu-bg: oklch(98% 0.015 210);
+  --popover-bg: oklch(98% 0.015 210);
+  --menu-shadow: 0 16px 36px oklch(30% 0.09 230 / 0.2);
+  --modal-shadow: 0 24px 54px oklch(30% 0.09 230 / 0.25);
+  --scroll-thumb: oklch(68% 0.07 220);
+  --scroll-thumb-hover: oklch(52% 0.11 220);
+  --date-out: oklch(52% 0.045 225);
+  --shadow-sm: 0 2px 5px oklch(37% 0.08 230 / 0.13);
+}
+
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg:
+    radial-gradient(circle at 18% -10%, oklch(34% 0.11 205) 0, transparent 34%),
+    radial-gradient(circle at 90% 8%, oklch(29% 0.1 245) 0, transparent 30%),
+    linear-gradient(180deg, oklch(21% 0.055 225), oklch(16% 0.045 235));
+  --accent: oklch(75% 0.13 205);
+  --accent-strong: oklch(84% 0.1 200);
+  --accent-soft: oklch(75% 0.13 205 / 0.15);
+  --accent-focus: oklch(75% 0.13 205 / 0.8);
+  --accent-border: oklch(75% 0.13 205 / 0.4);
+  --accent-ring: oklch(75% 0.13 205 / 0.2);
+  --accent-wash: oklch(75% 0.13 205 / 0.09);
+  --success: oklch(76% 0.13 160);
+  --success-ring: oklch(76% 0.13 160 / 0.2);
+  --amber: oklch(82% 0.15 82);
+  --red: oklch(71% 0.19 27);
+  --urgent: var(--red);
+  --border: oklch(87% 0.045 210 / 0.12);
+  --circle-border: oklch(87% 0.045 210 / 0.24);
+  --text: oklch(92% 0.025 210);
+  --muted: oklch(73% 0.04 215);
+  --faint: oklch(64% 0.04 220);
+  --panel: oklch(22% 0.055 228 / 0.96);
+  --panel-solid: oklch(22% 0.055 228);
+  --panel-2: oklch(27% 0.065 225);
+  --card: oklch(25% 0.055 228);
+  --hover: oklch(75% 0.13 205 / 0.12);
+  --strong-text: oklch(15% 0.045 235);
+  --primary-bg: oklch(75% 0.13 205);
+  --primary-text: oklch(15% 0.045 235);
+  --primary-hover: oklch(83% 0.1 200);
+  --header-bg: oklch(17% 0.05 235 / 0.97);
+  --neutral-chip-bg: oklch(32% 0.055 225);
+  --neutral-chip-text: oklch(79% 0.035 210);
+  --today-bg: linear-gradient(180deg, oklch(34% 0.085 205), oklch(28% 0.08 225));
+  --task-hover-border: oklch(75% 0.13 205 / 0.48);
+  --task-hover-shadow: 0 8px 18px oklch(7% 0.035 235 / 0.42);
+  --search-match-bg: oklch(34% 0.09 205);
+  --check-border: oklch(57% 0.055 215);
+  --danger-soft: oklch(71% 0.19 27 / 0.12);
+  --overlay: oklch(5% 0.035 235 / 0.72);
+  --menu-bg: oklch(22% 0.055 228);
+  --popover-bg: oklch(22% 0.055 228);
+  --menu-shadow: 0 16px 36px oklch(5% 0.035 235 / 0.42);
+  --modal-shadow: 0 24px 54px oklch(5% 0.035 235 / 0.5);
+  --scroll-thumb: oklch(38% 0.06 225);
+  --scroll-thumb-hover: oklch(57% 0.09 210);
+  --date-out: oklch(64% 0.04 220);
+  --shadow-sm: 0 2px 5px oklch(5% 0.035 235 / 0.34);
+}
+
+.brand span,
+.week-label,
+.day-name,
+.day-num,
+.day-month,
+.modal-title {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+.app-header,
+.week-nav,
+.day-stepper,
+.filter-control,
+.file-control,
+.column-surface:not(.collapsed) > .col-header,
+.modal,
+.context-menu,
+.submenu,
+.file-popover,
+.clear-popover,
+.task-marker-filter-popover,
+.editor-filter-popover,
+.visual-theme-popover,
+.column-actions-popover,
+.date-popover {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--strong-text) 70%, transparent),
+    var(--shadow-sm);
+}
+.task {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--strong-text) 80%, transparent),
+    var(--shadow-sm);
+}
+.icon-btn,
+.btn {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, var(--strong-text) 85%, transparent),
+    0 1px 2px color-mix(in oklch, var(--text) 16%, transparent);
+}
+.icon-btn:active,
+.btn:active {
+  box-shadow: inset 0 1px 3px color-mix(in oklch, var(--text) 22%, transparent);
+}

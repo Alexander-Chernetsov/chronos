@@ -1,0 +1,176 @@
+/* Theme: architectural blueprint and drafting paper */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "blueprint";
+  --chronos-theme-name: "Синька";
+  --chronos-theme-icon-path: "M3,20L12,4L21,20H3M7,18H17L12,9L7,18M11,14H13V18H11V14M4,4H9V6H6V9H4V4M15,4H20V9H18V6H15V4Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Segoe UI", system-ui, sans-serif;
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-compact: 2px;
+  --radius-md: 2px;
+  --radius-card: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 3px;
+  --radius-panel: 3px;
+  --radius-modal: 3px;
+  --radius-pill: 2px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg:
+    linear-gradient(to right, oklch(46% 0.13 246 / 0.09) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(to bottom, oklch(46% 0.13 246 / 0.09) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(to right, oklch(46% 0.13 246 / 0.13) 1px, transparent 1px) 0 0 / 96px 96px,
+    linear-gradient(to bottom, oklch(46% 0.13 246 / 0.13) 1px, transparent 1px) 0 0 / 96px 96px,
+    oklch(94% 0.025 229);
+  --accent: oklch(48% 0.17 249);
+  --accent-strong: oklch(34% 0.16 249);
+  --accent-soft: oklch(87% 0.065 233);
+  --accent-focus: oklch(48% 0.17 249 / 0.76);
+  --accent-border: oklch(48% 0.17 249 / 0.42);
+  --accent-ring: oklch(48% 0.17 249 / 0.18);
+  --accent-wash: oklch(48% 0.17 249 / 0.08);
+  --success: oklch(46% 0.13 158);
+  --success-ring: oklch(46% 0.13 158 / 0.2);
+  --amber: oklch(63% 0.15 76);
+  --red: oklch(52% 0.2 27);
+  --urgent: var(--red);
+  --border: oklch(42% 0.11 246 / 0.2);
+  --circle-border: oklch(42% 0.11 246 / 0.32);
+  --text: oklch(28% 0.09 246);
+  --muted: oklch(43% 0.07 246);
+  --faint: oklch(51% 0.055 246);
+  --panel: oklch(97% 0.018 229 / 0.96);
+  --panel-solid: oklch(97% 0.018 229);
+  --panel-2: oklch(89% 0.045 233);
+  --card: oklch(99% 0.01 229);
+  --hover: oklch(87% 0.065 233);
+  --strong-text: oklch(98% 0.012 229);
+  --primary-bg: oklch(35% 0.16 249);
+  --primary-text: oklch(98% 0.012 229);
+  --primary-hover: oklch(29% 0.14 249);
+  --header-bg: oklch(97% 0.018 229 / 0.97);
+  --neutral-chip-bg: oklch(85% 0.045 233);
+  --neutral-chip-text: oklch(36% 0.08 246);
+  --today-bg: oklch(87% 0.07 233);
+  --today-border: var(--accent-border);
+  --task-hover-border: oklch(48% 0.17 249 / 0.55);
+  --task-hover-shadow: 0 3px 0 oklch(35% 0.14 249 / 0.16);
+  --search-match-bg: oklch(86% 0.075 233);
+  --check-border: oklch(47% 0.08 246);
+  --danger-soft: oklch(94% 0.04 27);
+  --overlay: oklch(20% 0.1 246 / 0.56);
+  --menu-bg: oklch(97% 0.018 229);
+  --popover-bg: oklch(97% 0.018 229);
+  --menu-shadow: 0 12px 30px oklch(28% 0.12 249 / 0.2);
+  --modal-shadow: 0 18px 44px oklch(28% 0.12 249 / 0.24);
+  --scroll-thumb: oklch(65% 0.07 240);
+  --scroll-thumb-hover: oklch(48% 0.12 246);
+  --date-out: oklch(51% 0.055 246);
+  --shadow-sm: 0 1px 0 oklch(35% 0.14 249 / 0.12);
+}
+
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg:
+    linear-gradient(to right, oklch(86% 0.07 225 / 0.08) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(to bottom, oklch(86% 0.07 225 / 0.08) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(to right, oklch(86% 0.07 225 / 0.14) 1px, transparent 1px) 0 0 / 96px 96px,
+    linear-gradient(to bottom, oklch(86% 0.07 225 / 0.14) 1px, transparent 1px) 0 0 / 96px 96px,
+    oklch(29% 0.12 249);
+  --accent: oklch(86% 0.09 220);
+  --accent-strong: oklch(92% 0.055 220);
+  --accent-soft: oklch(86% 0.09 220 / 0.15);
+  --accent-focus: oklch(86% 0.09 220 / 0.82);
+  --accent-border: oklch(86% 0.09 220 / 0.42);
+  --accent-ring: oklch(86% 0.09 220 / 0.2);
+  --accent-wash: oklch(86% 0.09 220 / 0.09);
+  --success: oklch(78% 0.12 158);
+  --success-ring: oklch(78% 0.12 158 / 0.2);
+  --amber: oklch(83% 0.15 82);
+  --red: oklch(72% 0.19 27);
+  --urgent: var(--red);
+  --border: oklch(86% 0.07 225 / 0.2);
+  --circle-border: oklch(86% 0.07 225 / 0.34);
+  --text: oklch(94% 0.02 225);
+  --muted: oklch(78% 0.04 225);
+  --faint: oklch(68% 0.045 225);
+  --panel: oklch(24% 0.105 249 / 0.95);
+  --panel-solid: oklch(24% 0.105 249);
+  --panel-2: oklch(32% 0.12 249);
+  --card: oklch(27% 0.105 249);
+  --hover: oklch(86% 0.09 220 / 0.12);
+  --strong-text: oklch(20% 0.1 249);
+  --primary-bg: oklch(86% 0.09 220);
+  --primary-text: oklch(20% 0.1 249);
+  --primary-hover: oklch(92% 0.055 220);
+  --header-bg: oklch(20% 0.11 249 / 0.97);
+  --neutral-chip-bg: oklch(37% 0.11 249);
+  --neutral-chip-text: oklch(86% 0.035 225);
+  --today-bg: oklch(37% 0.12 244);
+  --task-hover-border: oklch(86% 0.09 220 / 0.56);
+  --task-hover-shadow: 0 3px 0 oklch(8% 0.08 249 / 0.34);
+  --search-match-bg: oklch(39% 0.13 244);
+  --check-border: oklch(66% 0.055 225);
+  --danger-soft: oklch(72% 0.19 27 / 0.13);
+  --overlay: oklch(8% 0.08 249 / 0.72);
+  --menu-bg: oklch(24% 0.105 249);
+  --popover-bg: oklch(24% 0.105 249);
+  --menu-shadow: 0 12px 30px oklch(8% 0.08 249 / 0.38);
+  --modal-shadow: 0 18px 44px oklch(8% 0.08 249 / 0.46);
+  --scroll-thumb: oklch(43% 0.1 249);
+  --scroll-thumb-hover: oklch(61% 0.08 230);
+  --date-out: oklch(68% 0.045 225);
+  --shadow-sm: 0 1px 0 oklch(8% 0.08 249 / 0.28);
+}
+
+.brand span,
+.week-label,
+.day-name,
+.modal-title,
+.expanded-service-title {
+  font-family: Bahnschrift, "Arial Narrow", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+.day-num {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+.app-header {
+  border-bottom: 1px solid var(--accent-border);
+}
+.column-surface:not(.collapsed) > .col-header,
+.task,
+.week-nav,
+.day-stepper,
+.filter-control,
+.file-control,
+.new-task-input,
+.board-search-input,
+.modal,
+.context-menu,
+.submenu,
+.file-popover,
+.clear-popover,
+.task-marker-filter-popover,
+.editor-filter-popover,
+.visual-theme-popover,
+.column-actions-popover,
+.date-popover {
+  border-color: var(--circle-border);
+}
+.column-surface:not(.collapsed) > .col-header {
+  box-shadow: inset 0 -1px 0 var(--accent-border);
+}
+.task:hover {
+  transform: translateY(-1px);
+}

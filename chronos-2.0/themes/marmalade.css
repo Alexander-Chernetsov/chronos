@@ -1,0 +1,142 @@
+/* Marmalade — a 1970s kitchen: cream, burnt orange, mustard and espresso. */
+:root {
+  --marker-l: 44%;
+  --marker-c: 0.13;
+  --chronos-theme-id: "marmalade";
+  --chronos-theme-name: "Marmalade";
+  --chronos-theme-icon-path: "M2,19A10,10 0 0,1 22,19H19A7,7 0 0,0 5,19ZM8,19A4,4 0 0,1 16,19H13A1,1 0 0,0 11,19Z";
+  --ui-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --task-text-size: 0.84rem;
+  --radius-none: 0;
+  --radius-sm: 10px;
+  --radius-compact: 14px;
+  --radius-md: 16px;
+  --radius-card: 18px;
+  --radius-lg: 20px;
+  --radius-xl: 22px;
+  --radius-panel: 26px;
+  --radius-modal: 28px;
+  --radius-pill: 999px;
+  --backdrop-modal: blur(3px);
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --marmalade-stripe-1: #c9501c;
+  --marmalade-stripe-2: #e3a01f;
+  --marmalade-stripe-3: #3f8576;
+  color-scheme: light;
+  --body-bg: radial-gradient(circle at 50% -20%, #fbf2de 0, #f5e8cf 55%, #f0dfc0 100%);
+  --accent: #c24a18;
+  --accent-strong: #9c3a10;
+  --accent-soft: #f8dcc2;
+  --accent-focus: rgba(194, 74, 24, 0.74);
+  --accent-border: rgba(194, 74, 24, 0.34);
+  --accent-ring: rgba(194, 74, 24, 0.16);
+  --accent-wash: rgba(194, 74, 24, 0.08);
+  --success: #4d7434;
+  --success-ring: rgba(77, 116, 52, 0.2);
+  --amber: #946000;
+  --red: #c0352b;
+  --urgent: var(--red);
+  --border: rgba(84, 46, 18, 0.14);
+  --circle-border: rgba(84, 46, 18, 0.24);
+  --text: #38220f;
+  --muted: #6f5038;
+  --faint: #795a42;
+  --panel: #f9eed8;
+  --panel-solid: #fbf2df;
+  --panel-2: #f0e0c2;
+  --card: #fff9ec;
+  --hover: #f6e3c6;
+  --strong-text: #fff6e4;
+  --primary-bg: #a83f13;
+  --primary-text: #fff6e4;
+  --primary-hover: #8a320d;
+  --header-bg: #f8ecd4;
+  --neutral-chip-bg: #e8d5b3;
+  --neutral-chip-text: #654832;
+  --today-bg: #f9dcc0;
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(194, 74, 24, 0.36);
+  --task-hover-shadow: 0 8px 20px rgba(110, 60, 20, 0.14);
+  --search-match-bg: #fbe6cf;
+  --check-border: #d6bf9b;
+  --danger-soft: #fdeee6;
+  --overlay: rgba(56, 34, 15, 0.42);
+  --menu-bg: #fcf3e1;
+  --popover-bg: #fcf3e1;
+  --menu-shadow: 0 18px 44px rgba(90, 50, 16, 0.2);
+  --modal-shadow: 0 24px 64px rgba(90, 50, 16, 0.24);
+  --scroll-thumb: #dcc7a3;
+  --scroll-thumb-hover: #c2a87e;
+  --date-out: #7c5f48;
+  --shadow-sm: 0 2px 0 rgba(84, 46, 18, 0.07);
+}
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  --marmalade-stripe-1: #e0672f;
+  --marmalade-stripe-2: #f0b23a;
+  --marmalade-stripe-3: #5fa896;
+  color-scheme: dark;
+  --body-bg: radial-gradient(circle at 50% -20%, #2a1d15 0, #1f1610 55%, #1a120d 100%);
+  --accent: #f2a23a;
+  --accent-strong: #ffc066;
+  --accent-soft: rgba(242, 162, 58, 0.16);
+  --accent-focus: rgba(242, 162, 58, 0.8);
+  --accent-border: rgba(242, 162, 58, 0.38);
+  --accent-ring: rgba(242, 162, 58, 0.18);
+  --accent-wash: rgba(242, 162, 58, 0.09);
+  --success: #a8c56c;
+  --success-ring: rgba(168, 197, 108, 0.2);
+  --amber: #f4c552;
+  --red: #ff8468;
+  --urgent: var(--red);
+  --border: rgba(246, 226, 196, 0.1);
+  --circle-border: rgba(246, 226, 196, 0.2);
+  --text: #f6e9d4;
+  --muted: #c4ab90;
+  --faint: #b29980;
+  --panel: #281c14;
+  --panel-solid: #281c14;
+  --panel-2: #30231a;
+  --card: #35271d;
+  --hover: rgba(242, 162, 58, 0.12);
+  --strong-text: #21160e;
+  --primary-bg: #f2a23a;
+  --primary-text: #23160c;
+  --primary-hover: #ffb85a;
+  --header-bg: #241911;
+  --neutral-chip-bg: #43332a;
+  --neutral-chip-text: #c9b199;
+  --today-bg: linear-gradient(180deg, rgba(242, 162, 58, 0.2), rgba(242, 162, 58, 0.07)), var(--panel);
+  --today-border: var(--accent-border);
+  --task-hover-border: rgba(242, 162, 58, 0.4);
+  --task-hover-shadow: 0 8px 22px rgba(0, 0, 0, 0.34);
+  --search-match-bg: #453020;
+  --check-border: #65503f;
+  --danger-soft: rgba(255, 132, 104, 0.11);
+  --overlay: rgba(12, 7, 3, 0.64);
+  --menu-bg: #2b1e15;
+  --popover-bg: #2b1e15;
+  --menu-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  --modal-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  --scroll-thumb: #4c3a2e;
+  --scroll-thumb-hover: #6b5443;
+  --date-out: #a58d76;
+  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.26);
+}
+
+/* Three retro stripes under the header; a shadow, so the header height is unchanged. */
+.app-header {
+  box-shadow:
+    0 3px 0 var(--marmalade-stripe-1),
+    0 6px 0 var(--marmalade-stripe-2),
+    0 9px 0 var(--marmalade-stripe-3);
+}
+
+/* Slab numerals and wordmark; task text stays in the interface sans. */
+.brand-wordmark,
+.day-num {
+  font-family: Rockwell, "Roboto Slab", "Zilla Slab", Georgia, serif;
+}

@@ -1,0 +1,218 @@
+/* Theme: terminal family — amber phosphor in a brown case */
+:root {
+  --marker-l: 44%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "amber-crt";
+  --chronos-theme-name: "Янтарь";
+  --chronos-theme-icon-path: "M4,3H20A2,2 0 0,1 22,5V16A2,2 0 0,1 20,18H14V20H17V22H7V20H10V18H4A2,2 0 0,1 2,16V5A2,2 0 0,1 4,3M4,5V16H20V5H4Z";
+  --ui-font-family: ui-monospace, "Cascadia Mono", "Consolas",
+    "DejaVu Sans Mono", monospace;
+  --task-text-size: 0.79rem;
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-compact: 0;
+  --radius-md: 0;
+  --radius-card: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-panel: 0;
+  --radius-modal: 0;
+  --radius-pill: 0;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 3px,
+      oklch(35% 0.06 55 / 0.04) 3px,
+      oklch(35% 0.06 55 / 0.04) 4px
+    ),
+    oklch(89% 0.045 78);
+  --accent: oklch(53% 0.15 52);
+  --accent-strong: oklch(42% 0.14 48);
+  --accent-soft: oklch(88% 0.07 66);
+  --accent-focus: oklch(53% 0.15 52 / 0.75);
+  --accent-border: oklch(53% 0.15 52 / 0.42);
+  --accent-ring: oklch(53% 0.15 52 / 0.2);
+  --accent-wash: oklch(53% 0.15 52 / 0.09);
+  --success: oklch(50% 0.1 128);
+  --success-ring: oklch(50% 0.1 128 / 0.18);
+  --amber: oklch(62% 0.14 82);
+  --red: oklch(47% 0.18 27);
+  --urgent: oklch(50% 0.19 30);
+  --border: oklch(32% 0.06 50 / 0.28);
+  --circle-border: oklch(32% 0.06 50 / 0.36);
+  --text: oklch(29% 0.07 50);
+  --muted: oklch(46% 0.06 55);
+  --faint: oklch(53% 0.05 58);
+  --panel: oklch(93% 0.035 78);
+  --panel-solid: oklch(93% 0.035 78);
+  --panel-2: oklch(86% 0.05 76);
+  --card: oklch(95.5% 0.028 80);
+  --hover: oklch(88% 0.06 66);
+  --strong-text: oklch(95% 0.028 80);
+  --primary-bg: oklch(40% 0.12 48);
+  --primary-text: oklch(95% 0.028 80);
+  --primary-hover: oklch(33% 0.11 46);
+  --header-bg: oklch(84% 0.055 74);
+  --neutral-chip-bg: oklch(85% 0.04 78);
+  --neutral-chip-text: oklch(40% 0.06 52);
+  --today-bg: oklch(87% 0.08 66);
+  --today-border: var(--accent);
+  --task-hover-border: var(--accent);
+  --task-hover-shadow: inset 0 0 0 1px var(--accent);
+  --search-match-bg: oklch(88% 0.09 76);
+  --check-border: oklch(58% 0.06 58);
+  --danger-soft: oklch(92% 0.05 27);
+  --overlay: oklch(22% 0.06 50 / 0.55);
+  --menu-bg: oklch(94% 0.032 78);
+  --popover-bg: oklch(94% 0.032 78);
+  --menu-shadow: 4px 4px 0 oklch(28% 0.07 50 / 0.2);
+  --modal-shadow: 6px 6px 0 oklch(28% 0.07 50 / 0.24);
+  --scroll-thumb: oklch(72% 0.06 70);
+  --scroll-thumb-hover: oklch(54% 0.1 56);
+  --date-out: oklch(57% 0.045 60);
+  --shadow-sm: none;
+}
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 3px,
+      oklch(82% 0.16 70 / 0.045) 3px,
+      oklch(82% 0.16 70 / 0.045) 4px
+    ),
+    radial-gradient(
+      125% 90% at 50% -12%,
+      oklch(22% 0.05 55) 0,
+      transparent 62%
+    ),
+    oklch(13% 0.02 50);
+  --accent: oklch(80% 0.16 70);
+  --accent-strong: oklch(88% 0.14 76);
+  --accent-soft: oklch(80% 0.16 70 / 0.16);
+  --accent-focus: oklch(80% 0.16 70 / 0.82);
+  --accent-border: oklch(80% 0.16 70 / 0.36);
+  --accent-ring: oklch(80% 0.16 70 / 0.2);
+  --accent-wash: oklch(80% 0.16 70 / 0.09);
+  --success: oklch(74% 0.11 130);
+  --success-ring: oklch(74% 0.11 130 / 0.2);
+  --amber: oklch(86% 0.14 92);
+  --red: oklch(64% 0.19 27);
+  --urgent: oklch(68% 0.19 32);
+  --border: oklch(80% 0.16 70 / 0.22);
+  --circle-border: oklch(80% 0.16 70 / 0.3);
+  --text: oklch(84% 0.13 72);
+  --muted: oklch(66% 0.1 68);
+  --faint: oklch(58% 0.08 66);
+  --panel: oklch(17% 0.028 52);
+  --panel-solid: oklch(17% 0.028 52);
+  --panel-2: oklch(20% 0.035 52);
+  --card: oklch(18% 0.03 52);
+  --hover: oklch(80% 0.16 70 / 0.14);
+  --strong-text: oklch(12% 0.02 50);
+  --primary-bg: oklch(80% 0.16 70);
+  --primary-text: oklch(12% 0.02 50);
+  --primary-hover: oklch(87% 0.14 74);
+  --header-bg: oklch(11% 0.018 50);
+  --neutral-chip-bg: oklch(24% 0.035 52);
+  --neutral-chip-text: oklch(72% 0.09 70);
+  --today-bg: oklch(80% 0.16 70 / 0.13);
+  --today-border: var(--accent);
+  --task-hover-border: var(--accent);
+  --task-hover-shadow:
+    inset 0 0 0 1px var(--accent),
+    0 0 18px oklch(80% 0.16 70 / 0.25);
+  --search-match-bg: oklch(26% 0.07 68);
+  --check-border: oklch(46% 0.07 60);
+  --danger-soft: oklch(64% 0.19 27 / 0.13);
+  --overlay: oklch(6% 0.015 50 / 0.74);
+  --menu-bg: oklch(17% 0.028 52);
+  --popover-bg: oklch(17% 0.028 52);
+  --menu-shadow: 4px 4px 0 oklch(4% 0.01 50 / 0.6);
+  --modal-shadow: 6px 6px 0 oklch(4% 0.01 50 / 0.66);
+  --scroll-thumb: oklch(31% 0.05 58);
+  --scroll-thumb-hover: oklch(52% 0.1 62);
+  --date-out: oklch(55% 0.07 66);
+  --shadow-sm: none;
+}
+
+/* Machine type */
+.brand span,
+.week-label,
+.day-name,
+.day-month,
+.col-title,
+.stepper-label,
+.btn,
+.modal-title,
+.expanded-service-title,
+.bin-tab {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.brand span {
+  font-weight: 700;
+}
+.task { --task-leading: 1.5; }
+.task-text {
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+.comment-preview {
+  font-size: 0.68rem;
+}
+::selection {
+  background: var(--accent);
+  color: var(--strong-text);
+}
+
+/* Phosphor bloom at night */
+:root[data-theme="dark"] .brand span,
+:root[data-theme="dark"] .day-num,
+:root[data-theme="dark"] .day-name,
+:root[data-theme="dark"] .day-month,
+:root[data-theme="dark"] .week-label,
+:root[data-theme="dark"] .task-text,
+:root[data-theme="dark"] .modal-title {
+  text-shadow: 0 0 7px oklch(80% 0.16 70 / 0.4);
+}
+
+/* Case and screen */
+.column-surface:not(.collapsed) {
+  padding: 5px;
+  border-color: var(--border);
+  background: var(--panel);
+}
+.column-surface:not(.collapsed) > .col-header {
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border);
+}
+.column-surface.today:not(.collapsed) > .col-header {
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+.task-list {
+  --task-list-air: 10px;
+}
+.task {
+  border-color: var(--border);
+  border-left: 3px solid var(--border);
+}
+.task:hover {
+  transform: none;
+}
+.task .icon-btn,
+.task .check-hit {
+  border-color: transparent;
+  background: transparent;
+}
+.task .icon-btn:hover {
+  border-color: var(--circle-border);
+  background: var(--hover);
+}

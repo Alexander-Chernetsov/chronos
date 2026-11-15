@@ -1,0 +1,168 @@
+/* Theme: Swiss grid, disciplined type and precise rules */
+:root {
+  --marker-l: 47%;
+  --marker-c: 0.13;
+  color-scheme: light;
+  --chronos-theme-id: "swiss-grid";
+  --chronos-theme-name: "Швейцарская сетка";
+  --chronos-theme-icon-path: "M3,3H10V10H3V3M12,3H21V10H12V3M3,12H10V21H3V12M12,12H21V21H12V12M5,5V8H8V5H5M14,5V8H19V5H14M5,14V19H8V14H5M14,14V19H19V14H14Z";
+  --task-text-size: 0.84rem;
+  --ui-font-family: "Arial Nova", Arial, Helvetica, system-ui, sans-serif;
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-compact: 2px;
+  --radius-md: 3px;
+  --radius-card: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+  --radius-panel: 4px;
+  --radius-modal: 4px;
+  --radius-pill: 2px;
+  --backdrop-modal: none;
+  --backdrop-bubble: none;
+  --backdrop-panel: none;
+  --backdrop-header: none;
+  --body-bg: oklch(96.5% 0.006 255);
+  --accent: oklch(49% 0.19 258);
+  --accent-strong: oklch(38% 0.18 258);
+  --accent-soft: oklch(91% 0.045 258);
+  --accent-focus: oklch(49% 0.19 258 / 0.76);
+  --accent-border: oklch(49% 0.19 258 / 0.4);
+  --accent-ring: oklch(49% 0.19 258 / 0.16);
+  --accent-wash: oklch(49% 0.19 258 / 0.07);
+  --success: oklch(49% 0.13 153);
+  --success-ring: oklch(49% 0.13 153 / 0.2);
+  --amber: oklch(62% 0.15 76);
+  --red: oklch(52% 0.2 27);
+  --urgent: var(--red);
+  --border: oklch(24% 0.015 258 / 0.18);
+  --circle-border: oklch(24% 0.015 258 / 0.28);
+  --text: oklch(20% 0.018 258);
+  --muted: oklch(42% 0.02 258);
+  --faint: oklch(50% 0.018 258);
+  --panel: oklch(99% 0.003 255);
+  --panel-solid: oklch(99% 0.003 255);
+  --panel-2: oklch(93% 0.008 255);
+  --card: oklch(99.5% 0.002 255);
+  --hover: oklch(92% 0.035 258);
+  --strong-text: oklch(99% 0.003 255);
+  --primary-bg: oklch(38% 0.18 258);
+  --primary-text: oklch(99% 0.003 255);
+  --primary-hover: oklch(31% 0.16 258);
+  --header-bg: oklch(99% 0.003 255);
+  --neutral-chip-bg: oklch(89% 0.012 255);
+  --neutral-chip-text: oklch(37% 0.02 258);
+  --today-bg: oklch(94% 0.03 258);
+  --today-border: var(--accent-border);
+  --task-hover-border: oklch(49% 0.19 258 / 0.48);
+  --task-hover-shadow: none;
+  --search-match-bg: oklch(91% 0.05 258);
+  --check-border: oklch(45% 0.02 258);
+  --danger-soft: oklch(94% 0.04 27);
+  --overlay: oklch(18% 0.02 258 / 0.5);
+  --menu-bg: oklch(99% 0.003 255);
+  --popover-bg: oklch(99% 0.003 255);
+  --menu-shadow: 0 10px 0 oklch(20% 0.018 258 / 0.08);
+  --modal-shadow: 0 14px 0 oklch(20% 0.018 258 / 0.1);
+  --scroll-thumb: oklch(67% 0.018 258);
+  --scroll-thumb-hover: oklch(48% 0.03 258);
+  --date-out: oklch(52% 0.018 258);
+  --shadow-sm: none;
+}
+
+:root[data-theme="dark"] {
+  --marker-l: 80%;
+  --marker-c: 0.12;
+  color-scheme: dark;
+  --body-bg: oklch(15% 0.018 258);
+  --accent: oklch(72% 0.14 255);
+  --accent-strong: oklch(80% 0.11 255);
+  --accent-soft: oklch(72% 0.14 255 / 0.14);
+  --accent-focus: oklch(72% 0.14 255 / 0.8);
+  --accent-border: oklch(72% 0.14 255 / 0.38);
+  --accent-ring: oklch(72% 0.14 255 / 0.18);
+  --accent-wash: oklch(72% 0.14 255 / 0.08);
+  --success: oklch(73% 0.12 153);
+  --success-ring: oklch(73% 0.12 153 / 0.2);
+  --amber: oklch(80% 0.14 82);
+  --red: oklch(69% 0.19 27);
+  --urgent: var(--red);
+  --border: oklch(91% 0.01 255 / 0.14);
+  --circle-border: oklch(91% 0.01 255 / 0.26);
+  --text: oklch(92% 0.008 255);
+  --muted: oklch(73% 0.012 255);
+  --faint: oklch(64% 0.012 255);
+  --panel: oklch(19% 0.02 258);
+  --panel-solid: oklch(19% 0.02 258);
+  --panel-2: oklch(23% 0.022 258);
+  --card: oklch(21.5% 0.02 258);
+  --hover: oklch(72% 0.14 255 / 0.11);
+  --strong-text: oklch(14% 0.018 258);
+  --primary-bg: oklch(72% 0.14 255);
+  --primary-text: oklch(14% 0.018 258);
+  --primary-hover: oklch(80% 0.11 255);
+  --header-bg: oklch(13% 0.02 258);
+  --neutral-chip-bg: oklch(28% 0.022 258);
+  --neutral-chip-text: oklch(78% 0.01 255);
+  --today-bg: oklch(27% 0.055 258);
+  --task-hover-border: oklch(72% 0.14 255 / 0.5);
+  --task-hover-shadow: none;
+  --search-match-bg: oklch(29% 0.07 258);
+  --check-border: oklch(58% 0.02 255);
+  --danger-soft: oklch(69% 0.19 27 / 0.12);
+  --overlay: oklch(5% 0.018 258 / 0.72);
+  --menu-bg: oklch(19% 0.02 258);
+  --popover-bg: oklch(19% 0.02 258);
+  --menu-shadow: 0 10px 0 oklch(5% 0.018 258 / 0.28);
+  --modal-shadow: 0 14px 0 oklch(5% 0.018 258 / 0.34);
+  --scroll-thumb: oklch(36% 0.02 258);
+  --scroll-thumb-hover: oklch(53% 0.035 255);
+  --date-out: oklch(63% 0.012 255);
+}
+
+.brand span,
+.week-label,
+.day-name,
+.modal-title,
+.expanded-service-title {
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+.day-num {
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
+.app-header {
+  border-bottom-color: var(--accent);
+  border-bottom-width: 2px;
+}
+.column-surface:not(.collapsed) > .col-header {
+  border-top: 2px solid var(--text);
+  border-bottom-color: var(--border);
+}
+.column-surface.today:not(.collapsed) > .col-header {
+  border-top-color: var(--accent);
+}
+.task,
+.week-nav,
+.day-stepper,
+.filter-control,
+.file-control,
+.new-task-input,
+.board-search-input,
+.modal,
+.context-menu,
+.submenu,
+.file-popover,
+.clear-popover,
+.task-marker-filter-popover,
+.editor-filter-popover,
+.visual-theme-popover,
+.column-actions-popover,
+.date-popover {
+  box-shadow: none;
+}
+.task:hover {
+  transform: none;
+}
